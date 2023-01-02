@@ -6,13 +6,31 @@
 * you'd want loaded before the Tailwind utilities, so the
 * utilities can still override them.
 */
-@import "./custom.css";
 
 /* Tailwind CSS utility classes */
 @import "tailwindcss/utilities";
 
 /* Your custom utility classes */
 @import "utilities";
+@import "components";
+
+@tailwind base;
+
+@layer base {
+  html {
+    font-weight: 400;
+    font-family: "Georgia", serif;
+  }
+  
+  a {
+    color: #8C8C8C;
+  }
+  
+  p {
+    margin: 0;
+  }
+
+}
 
 :root {
   color-scheme: light dark;

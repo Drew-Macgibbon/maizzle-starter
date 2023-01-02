@@ -12,4 +12,25 @@
   .break-word {
     word-break: break-word;
   }
+  
+  .border-left {
+    border-left: 1px solid #DBD9D3;
+  }
+  
+  .type-body-s {
+    font-size: 9px;
+  }
+
+  .border-tb {
+    border-top: 1px solid #DBD9D3;
+    border-bottom: 1px solid #DBD9D3;
+  }
+  
+  .border-t {
+    border-top: 1px solid #DBD9D3;
+  }
+  
+  .border-t-thick {
+    border-top: 2px solid #000;
+  }
 }

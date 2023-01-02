@@ -1,0 +1,15 @@
+/*
+ * Here is where you can define your custom components.
+ *
+ * We wrap them in the `components` @layer directive, so
+ * that Tailwind moves them to the correct location.
+ *
+ * More info:
+ * https://tailwindcss.com/docs/functions-and-directives#layer
+*/
+
+@tailwind components;
+
+@layer components {
+
+}
