@@ -39,12 +39,12 @@ yarn build:<config_name>
 
 ### FYI:
 
-- For liquid support in vsCode add "emmet.includeLanguages": { "liquid": "html" } to your settings
-- Most Maizzle elements, eg. `<component></component>` do not allow self-closing
-- Rebuild if you change ``test.json`` or config files
-- Folders in  ``src/templates`` breaks asset imports (and likely other stuff)
+- for liquid support in vsCode add "emmet.includeLanguages": { "liquid": "html" } to your settings
+- most Maizzle elements, eg. `<component></component>` do not allow self-closing
+- rebuild if you change ``test.json`` or config files
+- folders in  ``src/templates`` breaks asset imports (and likely other stuff)
 - ``@{{ name | fallback: 'friend' }}`` for passing ignored variables to components.
-- Only able to get escaped variables working (``@{{ name | fallback: 'friend' }}``) within the ``<raw>`` element of **components**
+- only able to get escaped variables working (``@{{ name | fallback: 'friend' }}``) within the ``<raw>`` element of **components**
 
 If you've never coded emails before, [read this](https://explore.reallygoodemails.com/new-to-email-coding-heres-where-to-start-2494422f0bd4)
 
@@ -52,7 +52,7 @@ If you've never coded emails before, [read this](https://explore.reallygoodemail
 
 If you're unsure about HTML or CSS validity you can check [here](https://www.caniemail.com/) 
 
-need to evaluate and add the best to workflow
+We need to evaluate and add the best to workflow
 
 - https://www.mail-tester.com/
 - https://www.emailonacid.com/
