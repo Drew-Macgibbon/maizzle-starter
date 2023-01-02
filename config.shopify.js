@@ -11,10 +11,6 @@ module.exports = {
   },
   filters: {
     // https://maizzle.com/docs/filters
-    if: str => console.log('if found' + str)
   },
-  transformers: [
-    require('./src/transformer/ifs'),
-  ],
   locals: testData,
 };
