@@ -22,14 +22,18 @@ yarn dev
 Build emails for production:
 
 ```
-yarn build <config_name>
-<!-- eg. yarn build shopify -->
+yarn build:<config_name>
+<!-- 
+  eg. yarn build:shopify
+  update scripts when a new project is added
+ -->
 ```
 
 ### Todo
 
 - [ ] house multiple projects emails, use seperate config file & dynamic/seperated components
-- [ ] use tailwind variables for everything
+- [ ] refactor tailwind reusable components, set utilities
+- [ ] create tailwind configs for each project
 - [ ] convert HTML to Liquid progromatically
 - [ ] validate Liquid code using ``liquidjs`` (maybe)
 
@@ -46,10 +50,11 @@ If you've never coded emails before, [read this](https://explore.reallygoodemail
 
 ### Email Checking
 
+If you're unsure about HTML or CSS validity you can check [here](https://www.caniemail.com/) 
+
 need to evaluate and add the best to workflow
 
 - https://www.mail-tester.com/
-- https://www.caniemail.com/
 - https://www.emailonacid.com/
 - https://litmus.com/
 - https://alter.email/
