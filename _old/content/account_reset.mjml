@@ -1,0 +1,18 @@
+<mj-section mj-class="main-copy-section">
+  <mj-column mj-class="main-copy-column">
+    <mj-text mj-class="main-copy-text">
+        <p>Click below to reset your password</p>
+    </mj-text>
+  </mj-column>
+</mj-section>
+
+<mj-include path="../common/button_reset.mjml" />
+
+<mj-section mj-class="main-copy-section">
+  <mj-column mj-class="main-copy-column">
+    <mj-text mj-class="main-copy-text">
+      If you have any questions, reply to this email or contact us at 
+      <a class="grey" href="mailto:contact@yumeibrand.com" target="_blank">contact@yumeibrand.com</a></p>
+    </mj-text>
+  </mj-column>
+</mj-section>

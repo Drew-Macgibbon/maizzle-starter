@@ -1,0 +1,13 @@
+<mjml>
+  <mj-head>
+    <mj-include path="./common/head.mjml" /> </mj-head>
+  <mj-body>
+   <mj-wrapper mj-class="container type-body-m">
+   
+    <mj-include path="./common/header.mjml" />
+    
+    <mj-include path="./content/gift_card.mjml" />
+
+    <mj-include path="./common/footer.mjml" /> </mj-body>
+  </mj-wrapper>
+</mjml>

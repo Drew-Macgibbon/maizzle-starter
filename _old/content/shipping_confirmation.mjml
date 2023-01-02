@@ -1,0 +1,37 @@
+<mj-raw>
+{% if fulfillment.item_count == item_count %}
+  {% capture email_title %}Your Yu Mei order is on its way and will be with you shortly.{% endcapture %}
+  {% capture email_body %}Track your items to see the delivery status.{% endcapture %}
+{% elsif fulfillment.item_count > 1 %}
+  {% if fulfillment_status == 'fulfilled' %}
+    {% capture email_title %}The last items in your Yu Mei order is on its way and will be with you shortly.{% endcapture %}
+    {% capture email_body %}Track your items to see the delivery status.{% endcapture %}
+  {% else %}
+    {% capture email_title %}Some items in your Yu Mei order are on the way and will be with you shortly.{% endcapture %}
+    {% capture email_body %}Track your items to see the delivery status.{% endcapture %}
+  {% endif %}
+{% else %}
+  {% if fulfillment_status == 'fulfilled' %}
+    {% capture email_title %}The last item in your Yu Mei order is on its way and will be with you shortly.{% endcapture %}
+    {% capture email_body %}Track your items to see the delivery status.{% endcapture %}
+  {% else %}
+    {% capture email_title %}One item in your Yu Mei order is on its way and will be with you shortly.{% endcapture %}
+    {% capture email_body %}Track your items to see the delivery status.{% endcapture %}
+  {% endif %}
+{% endif %}
+
+{% capture email_delivery %}
+  Estimated delivery date: {{fulfillment.estimated_delivery_at | date: "%B %-d, %Y"}}
+{% endcapture %}
+</mj-raw>
+
+<mj-section mj-class="main-copy-section">
+  <mj-column mj-class="main-copy-column">
+    <mj-text mj-class="main-copy-text">
+      <p>{{ email_title }}</p>
+      <p>{{ email_body }}</p>
+      <p>If you need anything further, simply reply to this email.</p>
+      <p>Yu Mei x</p>
+    </mj-text>
+  </mj-column>
+</mj-section>
