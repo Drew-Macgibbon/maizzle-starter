@@ -31,7 +31,7 @@
 * utilities can still override them.
 */
 .border-left {
-  border-left: 1px solid #000;
+  border-left: 1px solid #dbd9d3;
 }
 a.button { 
     display:block;
@@ -55,6 +55,26 @@ a:hover { text-decoration: none !important; }
 .type-body-s {
     font-size: 9px;
   }
+.border-tb {
+    border-top: 1px solid #dbd9d3;
+    border-bottom: 1px solid #dbd9d3;
+  }
+.border-t {
+    border-top: 1px solid #dbd9d3;
+  }
+.border-t-thick {
+    border-top: 2px solid #000;
+  }
+html {
+    font-weight: 400;
+    font-family: "Georgia", serif;
+  }
+a {
+    color: #8C8C8C;
+  }
+p {
+    margin: 0;
+  }
 /* Tailwind CSS utility classes */
 .absolute {
   position: absolute !important;
@@ -65,17 +85,29 @@ a:hover { text-decoration: none !important; }
 .mb-40px {
   margin-bottom: 40px !important;
 }
-.mb-32 {
-  margin-bottom: 128px !important;
+.mb-120px {
+  margin-bottom: 120px !important;
 }
 .mt-16px {
   margin-top: 16px !important;
 }
+.mb-16px {
+  margin-bottom: 16px !important;
+}
 .mt-8 {
   margin-top: 32px !important;
 }
-.mb-16 {
-  margin-bottom: 64px !important;
+.mt-120px {
+  margin-top: 120px !important;
+}
+.mt-40px {
+  margin-top: 40px !important;
+}
+.mt-80px {
+  margin-top: 80px !important;
+}
+.mb-80px {
+  margin-bottom: 80px !important;
 }
 .block {
   display: block !important;
@@ -115,6 +147,12 @@ a:hover { text-decoration: none !important; }
 }
 .max-w-full {
   max-width: 100% !important;
+}
+.max-w-252px {
+  max-width: 252px !important;
+}
+.max-w-131px {
+  max-width: 131px !important;
 }
 .flex-row {
   flex-direction: row !important;
@@ -226,12 +264,6 @@ a:hover { text-decoration: none !important; }
 .pb-16px {
   padding-bottom: 16px !important;
 }
-.pb-32px {
-  padding-bottom: 32px !important;
-}
-.pb-8px {
-  padding-bottom: 8px !important;
-}
 .pl-24px {
   padding-left: 24px !important;
 }
@@ -240,6 +272,15 @@ a:hover { text-decoration: none !important; }
 }
 .pl-16px {
   padding-left: 16px !important;
+}
+.pb-8px {
+  padding-bottom: 8px !important;
+}
+.pt-32px {
+  padding-top: 32px !important;
+}
+.pb-32px {
+  padding-bottom: 32px !important;
 }
 .text-left {
   text-align: left !important;
@@ -265,6 +306,9 @@ a:hover { text-decoration: none !important; }
 .text-base {
   font-size: 1rem !important;
   line-height: 1.5rem !important;
+}
+.font-normal {
+  font-weight: 400 !important;
 }
 .capitalize {
   text-transform: capitalize !important;
@@ -342,23 +386,6 @@ a:hover { text-decoration: none !important; }
   line-height: 32px;
   letter-spacing: -0.02em;
 }
-.border-tb {
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-}
-.border-t {
-  border-top: 1px solid #000;
-}
-html {
-  font-weight: 400;
-  font-family: "Georgia", serif;
-}
-a {
-  color: #8C8C8C;
-}
-p {
-  margin: 0;
-}
 @media (max-width: 600px) {
   .sm-px-6 {
     padding-left: 24px !important;
@@ -379,43 +406,49 @@ p {
             
       <!-- <component src="src/components/abandoned_cart.html"></component> -->
       <!-- <component src="src/components/head.html"> -->
-      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+      
   
-    <tr class="w-full flex justify-between">
-      <td class="column w-full">
-        <p class="bg-red-100 p-0 m-0">
-          {% billing_address.name %} {% if item_count == 1 %} 
-          Hi, John Appleseed
-          {% else %}
-          Hi, John Appleseed
-          {% endif %} {% else %} Hi, {% endif %}
-        </p>
-      </td></tr><td class="column w-full flex justify-end p-0 m-0">
-      <a href>
-        <img src="./images/logo.png" alt="Maizzle" width="70" class="max-w-full">
-      </a>
-    </td>
+    <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+      <tr class="w-full flex justify-between">
+        <td class="column w-full">  
+          <p class="bg-red-100 p-0 m-0">
+            {% billing_address.name %} {% if item_count == 1 %} 
+            Hi, {{ billing_address.name }}
+            {% else %}
+            Hi, {{ billing_address.name }}
+            {% endif %} {% else %} Hi, {% endif %}
+          </p>
+        </td>
+        <td class="column w-full flex justify-end p-0 m-0">
+          <a href>
+            <img src="./images/logo.png" alt="Maizzle" width="70" class="max-w-full">
+          </a>
+        </td>
+      </tr>
+    </table>
   
-</table>
 
-      <table class="w-full mb-16 pt-200px" cellpadding="0" cellspacing="0" role="presentation">
+      <table class="w-full mb-80px pt-200px" cellpadding="0" cellspacing="0" role="presentation">
   <tr class="w-full flex flex-row justify-between">
     <td class="column">
       <h1 class=" text-heading-all m-0 pb-16px">
-        Cancellation Confirmation, <br>
-        your order has been successfully cancelled
-      </h1>
-      <p class="pb-32px text-body-all">
-        We’re sorry this order didn’t work out for you. <br>
-        But we hope we’ll see you again.
+        Cancellation Confirmation,
+        
+          <br>
+          your order has been successfully cancelled
+        </h1>
+      <p class="text-body-all max-w-252px">
+        We’re sorry this order didn’t work out for you. But we hope we’ll see you again.
       </p>
-      <p class="text-caption-all pb-8px"> 
-        If this was an error, please contact:
-      </p>
-      <p class="text-caption-all">
-        Customer service <br>
-        <a href="info@hyejaskincare.com">info@hyejaskincare.com</a>
-      </p>
+      
+        <p class="text-caption-all pb-8px pt-32px">
+          If this was an error, please contact:
+        </p>
+        <p class="text-caption-all">
+          Customer service <br>
+          <a href="info@hyejaskincare.com">info@hyejaskincare.com</a>
+        </p>
+      
     </td>
   </tr>
 </table>
@@ -446,8 +479,7 @@ p {
   </tr>
 </table>
 
-      <!-- shopify design -->
-
+      
   
     <table class="w-full h-full" cellpadding="0" cellspacing="0" role="presentation">  
       <tr class="w-full flex justify-between border-t">
@@ -455,12 +487,14 @@ p {
           {% for line in line_items %}
           {% assign title = line.title | split: '/' %}
           <img src="{{ line.image  | img_url: '120x120' }}" width="120" alt="">
-          <div class="pl-2 font-primaryfont-normal text-body leading-body flex flex-col justify-between py-8px">
-            <p class="pb-2">
-              {{ title[0] }}<br>
-              {{ title[1] }}
-            </p>
-          <p>{{ line.line_price | money_with_currency }}</p>
+          <div class="pl-2 text-body-all flex flex-col justify-between py-8px">
+            <div class="h-full w-full">
+              <p class="pb-2">
+                {{ title[0] }}<br>
+                {{ title[1] }}
+              </p>
+            </div>
+            <p>{{ line.line_price | money_with_currency }}</p>
           </div>
         </td>
         <td class="h--full flex justify-end">
@@ -478,8 +512,9 @@ p {
         <p class="w-full"></p>
         <p class="w-full"></p>
         <p class="w-full">Subtotal:</p>
-        <p class="w-full">undefined</p>
-      
+        
+          <p class="w-full">990</p>
+        
     </td>
   </tr>
 </table>
@@ -491,8 +526,9 @@ p {
         <p class="w-full"></p>
         <p class="w-full"></p>
         <p class="w-full">Shipping:</p>
-        <p class="w-full">undefined</p>
-      
+        
+          <p class="w-full">10</p>
+        
     </td>
   </tr>
 </table>
@@ -511,45 +547,34 @@ p {
 </table>
 
       <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t">
+  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t-thick">
     <td class="flex flex-row justify-between w-full">
       
         <p class="w-full">Total:</p>
         <p class="w-full"></p>
         <p class="w-full"></p>
-        <p class="w-full">undefined</p>
-      
+        
+          <p class="w-full">$980</p>
+        
     </td>
   </tr>
 </table>
 
       <table cellpadding="0" cellspacing="0" role="presentation">
   <tr>
-    <div class="bg-black w-full mb-40px h-32px flex justify-center items-center font-primaryfont-normal">
+    <div class="bg-black w-full h-32px mb-40px flex justify-center items-center font-primaryfont-normal">
       <a class="text-_ffff text-center no-underline text-body leading-body tracking-body" href="https://www.yumeibrand.com/?action=ACTIVATE&amp;url=0" target="_blank" rel="noopener noreferrer">
-        View Order
+        
+View Order
       </a>
     </div>
-  </tr>
-</table>
-
-      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-tb">
-    <td class="flex flex-row justify-between w-full">
-      
-        <p class="w-full">Details</p>
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-      
-    </td>
   </tr>
 </table>
 
       <!-- shopify design -->
 
     
-        <table class="w-full mb-32 mt-16px " cellpadding="0" cellspacing="0" role="presentation">
+        <table class="w-full mb-120px mt-16px " cellpadding="0" cellspacing="0" role="presentation">
         <tr class="w-full flex flex-row justify-between font-primaryfont-normal text-body tracking-body leading-body text-_070707">
             <td class="column w-full">
                 <p class="pb-2 m-0">Shipping Address: </p>
@@ -625,6 +650,9 @@ p {
         </table>
     
 
+      <table cellpadding="0" cellspacing="0" role="presentation">
+    <div class="mt-120px"></div>
+</table>
       <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
     <tr class="w-full flex flex-row justify-between text-caption leading-caption gap-1 tracking-body">
         <td class="column w-full">
@@ -648,6 +676,7 @@ p {
 
       <!-- <component src="src/components/addresses.html"></component> -->
     
+  
           </td>
         </tr>
       </table>
@@ -656,8 +685,6 @@ p {
 </table>
 
 
-
-  
   </div>
 </body>
 </html>

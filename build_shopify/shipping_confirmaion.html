@@ -22,13 +22,16 @@
   
     <title>Testing Company name</title>
   <style>/* Tailwind CSS components */
+.container {
+  width: 100%;
+}
 /**
 * @import here any custom CSS components - that is, CSS that
 * you'd want loaded before the Tailwind utilities, so the
 * utilities can still override them.
 */
 .border-left {
-  border-left: 1px solid #DBD9D3;
+  border-left: 1px solid #dbd9d3;
 }
 a.button { 
     display:block;
@@ -53,11 +56,11 @@ a:hover { text-decoration: none !important; }
     font-size: 9px;
   }
 .border-tb {
-    border-top: 1px solid #DBD9D3;
-    border-bottom: 1px solid #DBD9D3;
+    border-top: 1px solid #dbd9d3;
+    border-bottom: 1px solid #dbd9d3;
   }
 .border-t {
-    border-top: 1px solid #DBD9D3;
+    border-top: 1px solid #dbd9d3;
   }
 .border-t-thick {
     border-top: 2px solid #000;
@@ -109,6 +112,9 @@ p {
 .block {
   display: block !important;
 }
+.inline {
+  display: inline !important;
+}
 .flex {
   display: flex !important;
 }
@@ -129,6 +135,12 @@ p {
 }
 .w-full {
   width: 100% !important;
+}
+.w-1-5 {
+  width: 20% !important;
+}
+.w-2-5 {
+  width: 40% !important;
 }
 .w-600px {
   width: 600px !important;
@@ -172,8 +184,14 @@ p {
 .rounded {
   border-radius: 4px !important;
 }
+.border {
+  border-width: 1px !important;
+}
 .border-t {
   border-top-width: 1px !important;
+}
+.border-b {
+  border-bottom-width: 1px !important;
 }
 .border-b-2px {
   border-bottom-width: 2px !important;
@@ -187,11 +205,11 @@ p {
 .border-black {
   border-color: #000 !important;
 }
-.bg-black {
-  background-color: #000 !important;
-}
 .bg-red-100 {
   background-color: #fee2e2 !important;
+}
+.bg-black {
+  background-color: #000 !important;
 }
 .bg-_F5F5F5 {
   background-color: #F5F5F5 !important;
@@ -202,6 +220,9 @@ p {
 .p-0 {
   padding: 0 !important;
 }
+.p-2 {
+  padding: 8px !important;
+}
 .py-8px {
   padding-top: 8px !important;
   padding-bottom: 8px !important;
@@ -209,6 +230,10 @@ p {
 .px-16px {
   padding-left: 16px !important;
   padding-right: 16px !important;
+}
+.py-1 {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
 }
 .py-2 {
   padding-top: 8px !important;
@@ -263,6 +288,12 @@ p {
 .text-center {
   text-align: center !important;
 }
+.text-right {
+  text-align: right !important;
+}
+.align-middle {
+  vertical-align: middle !important;
+}
 .font-primary {
   font-family: Georgia !important;
 }
@@ -278,6 +309,9 @@ p {
 }
 .font-normal {
   font-weight: 400 !important;
+}
+.capitalize {
+  text-transform: capitalize !important;
 }
 .leading-body {
   line-height: 14px !important;
@@ -315,6 +349,9 @@ p {
 .-webkit-font-smoothing-antialiased {
   -webkit-font-smoothing: antialiased;
 }
+.border-0 {
+  border: 0;
+}
 /* Your custom utility classes */
 /*
  * Here is where you can define your custom utility classes.
@@ -325,7 +362,6 @@ p {
  * More info:
  * https://tailwindcss.com/docs/functions-and-directives#layer
 */
-@base {}
 :root {
   color-scheme: light dark;
 }
@@ -371,39 +407,133 @@ p {
       <!-- <component src="src/components/abandoned_cart.html"></component> -->
       <!-- <component src="src/components/head.html"> -->
       
+  
     <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
       <tr class="w-full flex justify-between">
-        <td class="column w-full">
-            <p class="p-0 m-0 text-body font-primary">
-              
-                Hi, John Appleseed
-              </p>
+        <td class="column w-full">  
+          <p class="bg-red-100 p-0 m-0">
+            {% billing_address.name %} {% if item_count == 1 %} 
+            Hi, {{ billing_address.name }}
+            {% else %}
+            Hi, {{ billing_address.name }}
+            {% endif %} {% else %} Hi, {% endif %}
+          </p>
         </td>
-      <td class="column w-full flex justify-end p-0 m-0">
-        <a href>
-          <img src="./images/logo.png" alt="Maizzle" width="70" class="max-w-full">
+        <td class="column w-full flex justify-end p-0 m-0">
+          <a href>
+            <img src="./images/logo.png" alt="Maizzle" width="70" class="max-w-full">
           </a>
         </td>
       </tr>
     </table>
+  
 
       <table class="w-full mb-80px pt-200px" cellpadding="0" cellspacing="0" role="presentation">
   <tr class="w-full flex flex-row justify-between">
     <td class="column">
       <h1 class=" text-heading-all m-0 pb-16px">
-        Thank you for your order,
-        
-          <br>
-          we&#039;re processing it for you now
+        Your order has been shipped
         </h1>
       <p class="text-body-all max-w-252px">
-        We’ll send you an email once it&#039;s dispatched containing tracking details.
+        Your order is on it&#039;s way
       </p>
+      
+        <p class="text-caption-all pb-16px pt-32px max-w-252px">
+          You can check out the shipping details or track your order by clicking
+          thelink below.
+        </p>
+        <div class="max-w-131px bg-black w-full h-32px flex justify-center items-center font-primary font-normal">
+          <a class="text-_ffff text-center no-underline text-body leading-body tracking-body" href="https://www.yumeibrand.com/?action=ACTIVATE&amp;url=0" target="_blank" rel="noopener noreferrer">
+            Tracking Number
+          </a>
+        </div>
       
     </td>
   </tr>
 </table>
 
+      <!-- shopify design -->
+
+    
+        <table class="w-full mb-120px mt-16px " cellpadding="0" cellspacing="0" role="presentation">
+        <tr class="w-full flex flex-row justify-between font-primaryfont-normal text-body tracking-body leading-body text-_070707">
+            <td class="column w-full">
+                <p class="pb-2 m-0">Shipping Address: </p>
+                <div>
+                    {% if shipping_address.address1 %}
+                    <br>
+                    <p>
+                        {{ shipping_address.name }}
+                    </p>
+                    <p>
+                        {{ shipping_address.address1 }}
+                        {% endif %}
+                        {% if shipping_address.address2 %}
+                        <br>{{ shipping_address.address2 }} 
+                        {% endif %}
+                    </p>
+                    <p>
+                        {% if shipping_address.city %}
+                        <br>
+                        {{ shipping_address.city }},
+                        {% endif %}
+                    </p>
+                    <p>
+                        {% if shipping_address.province %}
+                        {{ shipping_address.province }}
+                        {% endif %}
+                        {{ shipping_address.zip }}
+                        <br>
+                        {{ shipping_address.country }}
+                    </p>
+                </div>
+                    <p class="pb-2 pt-4">Delivery Address: </p> 
+                    <div>
+                        <br>
+                        <p>
+                            {{ billing_address.name }}
+                        </p>
+                        <p>
+                            {% if billing_address.address1 %}
+                            <br>
+                            {{ billing_address.address1 }}
+                            {% endif %}
+                            {% if billing_address.address2 %}
+                            <br>
+                            {{ billing_address.address2 }}
+                            {% endif %}
+                        </p>
+                        <p>
+                            {% if billing_address.city %}
+                            <br>
+                            {{ shipping_address.city }},
+                            {% endif %}
+                        </p>
+                        <p>
+                        {% if billing_address.province %}
+                        {{ billing_address.province }}
+                        {% endif %}
+                        {{ billing_address.zip }} {{ billing_address.country }}
+                        </p>
+                    </div>
+                </td>
+                <td class="column w-full flex flex-col gap-2">
+                    {% if gateway %}
+                    <p>Payment Method: </p>
+                    <p>{{ gateway }}</p><br>
+                    {% endif %}
+                    {% if shipping_method.title %}
+                    <p class="pt-3">Delivery Method: </p>
+                    <p>{{ shipping_method.title }}</p><br>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+    
+
+      <table cellpadding="0" cellspacing="0" role="presentation">
+    <div class="mt-80px"></div>
+</table>
       <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
   <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t">
     <td class="flex flex-row justify-between w-full">
@@ -418,44 +548,30 @@ p {
 </table>
 
       
-  <table class="w-full h-full text-body-all" cellpadding="0" cellspacing="0" role="presentation">
-    <tr class="w-full flex justify-between border-t">
-      <td class="flex">
-        <img src="./images/item_1.png" alt="Maizzle" width="120">
-        <div class="pl-2 flex flex-col justify-between py-8px">
-          <div class="h-full w-full">
-            <p class="pb-2">
-              Niacinamide Heartleaf <br>
-              Calming Serum
-            </p>
-            <p>95ml / 3.2 fl.oz</p>
+  
+    <table class="w-full h-full" cellpadding="0" cellspacing="0" role="presentation">  
+      <tr class="w-full flex justify-between border-t">
+        <td class="flex">
+          {% for line in line_items %}
+          {% assign title = line.title | split: '/' %}
+          <img src="{{ line.image  | img_url: '120x120' }}" width="120" alt="">
+          <div class="pl-2 text-body-all flex flex-col justify-between py-8px">
+            <div class="h-full w-full">
+              <p class="pb-2">
+                {{ title[0] }}<br>
+                {{ title[1] }}
+              </p>
+            </div>
+            <p>{{ line.line_price | money_with_currency }}</p>
           </div>
-          <p>$26.00 USD</p>
-        </div>
-      </td>
-      <td class="flex justify-end">
-        <p>Qty × 1</p>
-      </td>
-    </tr>
-    <tr class="w-full flex justify-between border-t">
-      <td class="flex">
-        <img src="./images/item_2.png" alt="Maizzle" width="120">
-        <div class="pl-2 flex flex-col justify-between py-8px">
-          <div class="h-full w-full">
-            <p class="pb-2">
-              Niacinamide Heartleaf <br>
-              Calming Serum
-            </p>
-            <p>95ml / 3.2 fl.oz</p>
-          </div>
-          <p>$26.00 USD</p>
-        </div>
-      </td>
-      <td class="flex justify-end">
-        <p>Qty × 1</p>
-      </td>
-    </tr>
-  </table>
+        </td>
+        <td class="h--full flex justify-end">
+          {{ line.quantity }}
+        </td>
+        {% endfor %}
+      </tr>
+    </table>
+  
 
       <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
   <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t">
@@ -465,7 +581,7 @@ p {
         <p class="w-full"></p>
         <p class="w-full">Subtotal:</p>
         
-          <p class="w-full">$990 USD</p>
+          <p class="w-full">990</p>
         
     </td>
   </tr>
@@ -479,7 +595,7 @@ p {
         <p class="w-full"></p>
         <p class="w-full">Shipping:</p>
         
-          <p class="w-full">$10 USD</p>
+          <p class="w-full">10</p>
         
     </td>
   </tr>
@@ -506,7 +622,7 @@ p {
         <p class="w-full"></p>
         <p class="w-full"></p>
         
-          <p class="w-full">$980 USD</p>
+          <p class="w-full">$980</p>
         
     </td>
   </tr>
@@ -522,67 +638,6 @@ p {
   </tr>
 </table>
 
-      <!-- shopify design -->
-
-    <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-        <tr class="w-full h-32px mb-16px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-tb">
-            <td class="flex flex-row justify-between w-full">
-                <p class="w-full">Details</p>
-                <p class="w-full"></p>
-                <p class="w-full"></p>
-                <p class="w-full"></p>
-            </td>
-        </tr>
-        <tr class="w-full flex flex-row justify-between text-body-all text-_070707">
-            <td class="column w-full">
-                <p class="pb-2 m-0">Shipping Address: </p>
-                <div>
-                    <p>
-                        John Appleseed
-                    </p>
-                    <p>
-                        1 Commerce St
-                        undefined 
-                    </p>
-                    <p>
-                        New York,
-                    </p>
-                    <p>
-                        New York
-                        10001
-                        United States
-                    </p>
-                </div>
-                <p class="pb-2 pt-4">Delivery Address: </p> 
-                <div>
-                    <p>
-                        John Appleseed
-                    </p>
-                    <p>
-                        1 Commerce St
-                        undefined
-                    </p>
-                    <p>
-                        New York,
-                    </p>
-                    <p>
-                        New York
-                        10001 United States
-                    </p>
-                </div>
-            </td>
-            <td class="column w-full flex flex-col gap-2">
-                <p>Payment Method: </p>
-                <p>Visa</p>
-                <p class="pt-3">Delivery Method: </p>
-                <p>Overnight</p>
-            </td>
-        </tr>
-    </table>
-
-      <table cellpadding="0" cellspacing="0" role="presentation">
-    <div class="mt-120px"></div>
-</table>
       <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
     <tr class="w-full flex flex-row justify-between text-caption leading-caption gap-1 tracking-body">
         <td class="column w-full">
@@ -619,3 +674,4 @@ p {
 </body>
 </html>
 
+z
