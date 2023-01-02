@@ -1,0 +1,32 @@
+<table>
+    <tr>
+        <td>
+            <each loop="line, index in line_items">
+                <p>{{ index }}: {{ item }}</p>
+                <a href="{{shop.url}}{{line.product.url}}" style="border-bottom: none">
+                        <img 
+                    class="receipt-image" 
+                    src="{{ line.image | img_url: '200x' }}"
+                    style="width: 50px;"
+                    />
+                </a>
+            </each>
+        </td>
+        <td valign="top">
+            <if condition="page.title === 'undefined'">
+                <p>
+                    Nothing defined
+                    {{ page.test }}}
+                </p>
+            </if>
+            <else>
+                <p>We are probably developing locally.</p>
+            </else>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>{{ line.quantity || 'Quantity undefined' }}</p>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,1 @@
+Gmail ignores all code added to the HEAD email section

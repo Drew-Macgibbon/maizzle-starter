@@ -1,0 +1,31 @@
+<mj-section padding-top="20px">
+  <mj-column mj-class="buttons-column">
+    <mj-text
+      >
+    <div class="button-wrapper">
+      <a
+        class="button"
+        href="{{ gift_card.url }}"
+        target="_blank"
+        rel="noopener noreferrer" 
+      >
+        View Gift Card
+      </a>
+    </div>
+    </mj-text>
+  </mj-column>
+  <mj-column mj-class="buttons-column">
+    <mj-text>
+    <div class="button-wrapper">
+      <a
+        class="button"
+        href="https://yumeibrand.com/"
+        target="_blank"
+        rel="noopener noreferrer" 
+      >
+        View Store
+      </a>
+    </div>
+    </mj-text>
+  </mj-column>
+</mj-section>

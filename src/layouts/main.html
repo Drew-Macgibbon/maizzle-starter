@@ -19,8 +19,8 @@
     td,th,div,p,a,h1,h2,h3,h4,h5,h6 {font-family: "Segoe UI", sans-serif; mso-line-height-rule: exactly;}
   </style>
   <![endif]-->
-  <if condition="page.title">
-    <title>{{{ page.title }}}</title>
+  <if condition="page.company.name">
+    <title>{{{ page.company.name }}}</title>
   </if>
   <style>
     {{{ page.css }}}
@@ -35,7 +35,7 @@
     </div>
   </if>
   <div role="article" aria-roledescription="email" aria-label="{{{ page.title || '' }}}" lang="{{ page.language || 'en' }}">
-    <block name="template"></block>
+      <block name="template"></block>
   </div>
 </body>
 </html>

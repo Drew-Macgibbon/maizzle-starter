@@ -1,0 +1,16 @@
+<mj-section padding-bottom="20px">
+  <mj-column>
+    <mj-text>
+    <div class="button-wrapper">
+      <a
+        class="button"
+        href="https://www.yumeibrand.com/?action=ACTIVATE&amp;url={{ customer.account_activation_url | escape }}"
+        target="_blank"
+        rel="noopener noreferrer" 
+      >
+        Activate Your Account
+      </a>
+    </div>
+    </mj-text>
+  </mj-column>
+</mj-section>

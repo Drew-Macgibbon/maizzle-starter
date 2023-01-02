@@ -1,0 +1,45 @@
+<mj-section padding-top="24px" >
+  <mj-column>
+    <mj-divider mj-class="divider" padding-top="0" padding-bottom="0" />
+    <mj-text padding="4px 0">
+      Order {{  order_name }}
+    </mj-text>
+    <mj-divider mj-class="divider" padding-top="0" padding-bottom="0" />
+  </mj-column>
+</mj-section>
+<mj-section>
+  <mj-column>
+    <mj-raw>{% for line in line_items %}</mj-raw>
+    <mj-raw>{% assign title = line.title | split: '/' %}</mj-raw>
+    <mj-table padding="14px 0 12px">
+      <tr>
+      <td class="hide-mobile" valign="top" width="145px" padding-right="20px">
+        <img src="{{ line.image  | img_url: '125x170' }}" width="125" height="170" />
+      </td>
+      <td valign="top" width="50px" padding-right="10px" class="type-body-s" >
+        No.<br />
+        Style<br />
+        Colour<br />
+        Qty
+      </td>
+      <td valign="top" width="235px" padding-right="10px">
+          <a
+            href="{{shop.url}}{{line.product.url}}"
+            class="line-item-link"
+            target="_blank"
+            style="text-transform: uppercase"
+          >
+            {{ line.variant.sku }}
+          </a><br />
+          {{ title[0] }}<br />
+          {{ title[1] }}<br />
+          {{ line.quantity }}
+      </td>
+
+        <td valign="top" width="100px">{{ line.line_price | money_with_currency }}</td>
+      </tr>
+    </mj-table>
+    <mj-divider mj-class="divider" padding-top="0" padding-bottom="0" />
+    <mj-raw>{% endfor %}</mj-raw>
+  </mj-column>
+</mj-section>

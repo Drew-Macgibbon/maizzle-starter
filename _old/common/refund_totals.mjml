@@ -1,0 +1,18 @@
+<mj-section mj-class="totals-section" >
+  <mj-group>
+    <mj-column
+      mj-class="totals-column totals-column-left" >
+      <mj-text 
+        mj-class="totals-text totals-text-left" >
+          Total
+      </mj-text>
+    </mj-column>
+    <mj-column
+      mj-class="totals-column totals-column-right" >
+      <mj-text 
+        mj-class="totals-text totals-text-right" >
+          {{ amount | money_with_currency }}
+      </mj-text>
+    </mj-column>
+  <mj-group>
+</mj-section>

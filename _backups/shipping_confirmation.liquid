@@ -1,0 +1,375 @@
+{% if fulfillment.item_count == item_count %}
+  {% capture email_title %}Your Yu Mei order is on its way and will be with you shortly.{% endcapture %}
+  {% capture email_body %}Track your items to see the delivery status.{% endcapture %}
+{% elsif fulfillment.item_count > 1 %}
+  {% if fulfillment_status == 'fulfilled' %}
+    {% capture email_title %}The last items in your Yu Mei order is on its way and will be with you shortly.{% endcapture %}
+    {% capture email_body %}Track your items to see the delivery status.{% endcapture %}
+  {% else %}
+    {% capture email_title %}Some items in your Yu Mei order are on the way and will be with you shortly.{% endcapture %}
+    {% capture email_body %}Track your items to see the delivery status.{% endcapture %}
+  {% endif %}
+{% else %}
+  {% if fulfillment_status == 'fulfilled' %}
+    {% capture email_title %}The last item in your Yu Mei order is on its way and will be with you shortly.{% endcapture %}
+    {% capture email_body %}Track your items to see the delivery status.{% endcapture %}
+  {% else %}
+    {% capture email_title %}One item in your Yu Mei order is on its way and will be with you shortly.{% endcapture %}
+    {% capture email_body %}Track your items to see the delivery status.{% endcapture %}
+  {% endif %}
+{% endif %}
+
+{% capture email_emphasis %}Estimated delivery date: <strong>{{fulfillment.estimated_delivery_at | date: "%B %-d, %Y"}}</strong>{% endcapture %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>{{ email_title }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
+  <style>
+    .button__cell { background: {{ shop.email_accent_color }}; }
+    a, a:hover, a:active, a:visited { color: #3F3F3F; }
+    table {border-color: #3F3F3F;}
+    p {
+      color:#3F3F3F;
+      font-family: helvetica;
+      font-size: 11px;
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 100;
+    }
+    p a {
+      color:#3F3F3F;
+      font-family: helvetica;
+      font-size: 11px;
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 100;
+    }
+    .shop-name__cell {
+      text-align: center;
+      padding: 6px;
+      padding-bottom: 20px;
+      line-height: 1;
+      border-bottom: 1px solid #D1D1D1;
+    }
+    .shop-name__cell img{
+      width: 80px;
+    }
+    .actions__cell {
+      width: 50%;
+    }
+    .actions__cell--left {
+      padding-right: 15px;
+    }
+    .actions__cell--right {
+      padding-left: 15px;
+    }
+    .content__cell {
+      padding-bottom: 0;
+      padding-top: 28px;
+    }
+    .section {
+      border: none;
+    }
+    .section__cell {
+      padding: 40px 0 0;
+    }
+    .button {
+      background-color: #FFF;
+      border: 1px solid #D1D1D1;
+      padding: 14px;
+      width: 100%;
+    }
+    .button__cell {
+      background-color: #FFF;
+      border-radius: 0;
+    }
+    .button__text {
+      color: #3F3F3F;
+      font-size: 11px;
+      font-family: helvetica;
+      font-weight: 100;
+      padding: 14px;
+    }
+    .lp-sub-title {
+      font-size: 11px;
+      font-family: helvetica;
+      font-weight: 100;
+      color: #D1D1D1;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .lp-sub-title p{
+      color: #D1D1D1;
+    }
+    .lp-title-row {
+      padding: 6px 0;
+      display: block;
+      width: 100%;
+      border-top: 1px solid #D1D1D1;
+      border-bottom: 1px solid #D1D1D1;
+    }
+    .lp-title {
+      text-transform: uppercase;
+      font-family: helvetica;
+      font-weight: 100;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+    }
+    .lp-title p{
+      text-transform: uppercase;
+      font-family: helvetica;
+      font-weight: 100;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+    }
+    .lp-container-padding {
+      padding-top: 28px;
+    }
+    .order-list__product-image {
+      border-radius: 0;
+      border: none;
+    }
+    .lp-order-image {
+      width: 25%;
+      padding-right: 28px;
+    }
+    .order-list__item__cell {
+      padding: 14px 0;
+      border-bottom: 1px solid #D1D1D1;
+    }
+    .order-list__item-variant {
+      margin: 0;
+      font-family: helvetica;
+      font-size: 11px;
+      line-height: 1.6;
+      font-weight: 100;
+      color: #3F3F3F;
+    }
+    .order-list__item-title, .order-list__item-price, .subtotal-line__value {
+      font-family: helvetica;
+      font-size: 11px;
+      line-height: 1.6;
+      font-weight: 100;
+      color: #3F3F3F;
+    }
+    .order-list__item-original-price {
+      color: #3F3F3F;
+      font-family: helvetica;
+      font-size: 11px;
+      line-height: 1.6;
+      font-weight: 100;
+    }
+    .subtotal-table {
+      margin-top: 0;
+      border: none;
+    }
+    .subtotal-table--line {
+      border-top: 1px solid #D1D1D1;
+    }
+    .subtotal-spacer {
+      width: 50%;
+    }
+    .subtotal-line__title {
+      text-transform: uppercase;
+      padding-top: 11px;
+      font-family: helvetica;
+      font-weight: 100;
+    }
+    .subtotal-line__title p{
+      text-transform: uppercase;
+      padding-top: 11px;
+      font-family: helvetica;
+      font-weight: 100;
+    }
+    .customer-info__item {
+      width: 50% !important;
+      display: table-cell;
+      vertical-align: top;
+    }
+    .footer {
+      border: none;
+      border-bottom: 1px solid #D1D1D1;
+    }
+    .footer p{
+      padding: 28px 0;
+    }
+    .footer__cell {
+      padding: 0;
+      padding-bottom: 28px;
+    }
+    .footer__cell a{
+      font-size: 11px;
+      font-family: helvetica;
+      color: #D1D1D1;
+      font-weight: 100;
+    }
+    .header {
+      margin-bottom: 0;
+    }
+    .row {
+      border: none;
+    }
+    @media only screen and (max-width: 600px) {
+      .button__text {
+        padding: 14px 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+<table class="body">
+  <tr>
+    <td>
+  <table class="header row">
+    <tr>
+      <td class="header__cell">
+        <center>
+          <table class="container">
+            <tr>
+              <td>
+                <table class="row">
+                  <tr>
+                    <td class="shop-name__If you ecell">
+                      <img src="{{shop.email_logo_url}}" alt="{{ shop.name }}" width="{{ shop.email_logo_width }}">
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </center>
+      </td>
+    </tr>
+  </table>
+  <table class="row content">
+    <tr>
+      <td class="content__cell">
+        <center>
+          <table class="container">
+            <tr>
+              <td>
+                <p>{{ email_title }}</p>
+                <p>{{ email_body }}</p>
+<p>If you need anything further, simply reply to this email.</p>
+<p>Yu Mei x</p>
+                {% if fulfillment.estimated_delivery_at %}
+                <p>{{ email_emphasis }}</p>
+                  {% endif %}
+                  {% if order_status_url %}
+                    <table class="row actions">
+                      <tr>
+                        <td class="actions__cell actions__cell--left">
+                          <table class="button main-action-cell">
+                            <tr>
+                              <td class="button__cell"><a href="{{ order_status_url }}" class="button__text">View your order</a></td>
+                            </tr>
+                          </table>
+                        </td>
+                          {% if shop.url %}
+                          <td class="actions__cell actions__cell--right">
+                            <table  class="button">
+                              <tr>
+                                <td class="button__cell"><a href="{{ shop.url }}" class="button__text">Visit Store</a></td>
+                              </tr>
+                            </table>
+                          </td>
+                        {% endif %}
+                      </tr>
+                    </table>
+                    {% else %}
+                    {% if shop.url %}
+                        <table class="row actions">
+                          <tr>
+                            <td class="actions__cell actions__cell--right">
+                              <table class="button main-action-cell">
+                                <tr>
+                                  <td class="button__cell"><a href="{{ shop.url }}" class="button__text">Visit our store</a></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      {% endif %}
+                      {% endif %}
+                      </td>
+                    </tr>
+                  </table>
+                </center>
+              </td>
+            </tr>
+          </table>
+          <table class="row section">
+            <tr>
+              <td class="section__cell">
+                <center>
+                  <table class="container lp-title">
+                    <tr class="lp-title-row">
+                      <td width="100%">
+                        <p>Items in this shipment</p>
+                      </td>
+                    </tr>
+                  </table>
+                  <table class="container">
+                    <tr>
+                      <td>
+                        <table class="row">
+                          {% for line in fulfillment.fulfillment_line_items %}
+                          <tr class="order-list__item">
+                            <td class="order-list__item__cell">
+                              <table>
+                                <td class="lp-order-image">
+                                  {% if line.line_item.image %}
+                                    <img src="{{ line.line_item | img_url: 'medium' }}" align="left" width="100%" height="auto" class="order-list__product-image"/>
+                                  {% endif %}
+                                </td>
+                                <td class="order-list__product-description-cell">
+                                  {% if line.line_item.product.title %}
+                                    {% assign line_title = line.line_item.product.title %}
+                                  {% else %}
+                                    {% assign line_title = line.line_item.title %}
+                                  {% endif %}
+
+                                  {% if line.quantity < line.line_item.quantity %}
+                                    {% capture line_display %} {{ line.quantity }} of {{ line.line_item.quantity }} {% endcapture %}
+                                  {% else %}
+                                    {% assign line_display = line.line_item.quantity  %}
+                                  {% endif %}
+
+                                  <span class="order-list__item-title lp-title" style="font-size:10px;">{{ line_title }} × {{ line_display }}</span><br/>
+                                  {% if line.line_item.refunded_quantity > 0 %}
+                                    <span class="order-list__item-refunded">Refunded</span>
+                                  {% endif %}
+                                </td>
+                              </table>
+                            </td>
+                          </tr>{% endfor %}
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </center>
+              </td>
+            </tr>
+          </table>
+          <table class="row">
+            <tr>
+              <td class="footer__cell">
+                  <table class="container footer">
+                    <tr>
+                      <td>
+                        <p>If you have any questions, reply to this email or contact us at <a href="mailto:{{ shop.email }}">{{ shop.email }}</a></p>
+                      </td>
+                    </tr>
+                  </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

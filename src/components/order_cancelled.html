@@ -1,0 +1,25 @@
+<mj-section mj-class="main-copy-section">
+  <tr mj-class="main-copy-column">
+    <mj-text mj-class="main-copy-text">
+      <p align="center">
+        {% if financial_status == 'voided' %} {% case cancel_reason %} {% when
+        'customer' %} Order {{ name }} was canceled at your request and your
+        payment has been voided {% when 'inventory' %} Order {{ name }} was
+        canceled because we did not have enough stock to fulfill your order and
+        your payment has been voided {% when 'fraud' %} Order {{ name }} was
+        canceled because we suspect it is fraudulent and your payment has been
+        voided {% when 'other' %} Order {{ name }} was canceled because of
+        unforseen circumstances and your payment has been voided {% endcase %}
+        {% elsif financial_status == 'refunded' %} {% case cancel_reason %} {%
+        when 'customer' %} Order {{ name }} was canceled at your request and
+        your payment has been refunded {% when 'inventory' %} Order {{ name }}
+        was canceled because we did not have enough stock to fulfill your order
+        and your payment has been refunded {% when 'fraud' %} Order {{ name }}
+        was canceled because we suspect it is fraudulent and your payment has
+        been refunded {% when 'other' %} Order {{ name }} was canceled because
+        of unforseen circumstances and your payment has been refunded {% endcase
+        %} {% endif %} .
+      </p>
+    </mj-text>
+  </tr>
+</mj-section>

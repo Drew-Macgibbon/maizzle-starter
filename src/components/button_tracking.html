@@ -1,0 +1,37 @@
+<mj-section padding-top="20px" padding-bottom="50px">
+  <tr mj-class="buttons-column">
+    <mj-text>
+      <div class="button-wrapper text-align-center">
+        {% if fulfillment.tracking_url %}
+        <a
+          href="{{ fulfillment.tracking_url }}"
+          class="button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Track Your Order
+        </a>
+        {% elsif fulfillment.tracking_number %}
+        <p>Your tracking number: {{ fulfillment.tracking_number }}</p>
+
+        {% if fulfillment.estimated_delivery_at %}
+        <p>{{ email_delivery }}</p>
+        {% endif %} {% endif %}
+      </div>
+    </mj-text>
+  </tr>
+  <tr mj-class="buttons-column">
+    <mj-text>
+      <div class="button-wrapper">
+        <a
+          class="button"
+          href="https://yumeibrand.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Store
+        </a>
+      </div>
+    </mj-text>
+  </tr>
+</mj-section>

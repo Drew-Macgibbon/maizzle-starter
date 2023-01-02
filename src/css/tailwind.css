@@ -2,10 +2,11 @@
 @import "tailwindcss/components";
 
 /**
- * @import here any custom CSS components - that is, CSS that
- * you'd want loaded before the Tailwind utilities, so the
- * utilities can still override them.
+* @import here any custom CSS components - that is, CSS that
+* you'd want loaded before the Tailwind utilities, so the
+* utilities can still override them.
 */
+@import "./custom.css";
 
 /* Tailwind CSS utility classes */
 @import "tailwindcss/utilities";
@@ -16,3 +17,16 @@
 :root {
   color-scheme: light dark;
 }
+
+.text-body-all {
+  @apply text-body leading-body tracking-body font-normal font-primary;
+}
+
+.text-caption-all {
+  @apply text-caption leading-body tracking-body font-normal font-primary;
+}
+
+.text-heading-all {
+  @apply text-heading leading-heading tracking-heading font-normal font-primary;
+}
+

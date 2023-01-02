@@ -1,0 +1,68 @@
+<mj-section mj-class="address-section">
+   <mj-column mj-class="address-heading">
+      <mj-text> Shipping Address </mj-text>
+   </mj-column>
+   <mj-column mj-class="address-content">
+      <mj-text>
+         {{ shipping_address.name }} {% if shipping_address.address1 %}
+         <br />{{ shipping_address.address1 }} {% endif %} {% if shipping_address.address2 %} <br />{{
+         shipping_address.address2 }} {% endif %} {% if shipping_address.city %} <br />{{
+         shipping_address.city }}, {% endif %} {% if shipping_address.province %} {{
+         shipping_address.province }} {% endif %} {{ shipping_address.zip }} <br />{{
+         shipping_address.country }}
+      </mj-text>
+   </mj-column>
+</mj-section>
+
+<mj-raw>{% if shipping_method.title %}</mj-raw>
+<mj-section mj-class="address-section">
+   <mj-column mj-class="address-heading">
+      <mj-text> Delivery Method </mj-text>
+   </mj-column>
+   <mj-column mj-class="address-content">
+      <mj-text> {{ shipping_method.title }} </mj-text>
+   </mj-column>
+</mj-section>
+<mj-raw>{% endif %}</mj-raw>
+
+<mj-section mj-class="address-section">
+   <mj-column mj-class="address-heading">
+      <mj-text> Delivery Address </mj-text>
+   </mj-column>
+   <mj-column mj-class="address-content">
+      <mj-text>
+         {{ billing_address.name }} {% if billing_address.address1 %}
+         <br />{{ billing_address.address1 }} {% endif %} {% if billing_address.address2 %} <br />{{
+         billing_address.address2 }} {% endif %} {% if billing_address.city %} <br />{{
+         shipping_address.city }}, {% endif %} {% if billing_address.province %} {{
+         billing_address.province }} {% endif %} {{ billing_address.zip }} <br />{{
+         billing_address.country }}
+      </mj-text>
+   </mj-column>
+</mj-section>
+
+<mj-raw>{% if gateway %} </mj-raw>
+<mj-section mj-class="address-section">
+   <mj-column mj-class="address-heading">
+      <mj-text> Payment Method </mj-text>
+   </mj-column>
+   <mj-column mj-class="address-content">
+      <mj-text> {{ gateway }} </mj-text>
+   </mj-column>
+</mj-section>
+<mj-raw>{% endif %}</mj-raw>
+
+<mj-section padding-top="0" padding-bottom="8px">
+   <mj-column>
+      <mj-divider mj-class="divider" />
+   </mj-column>
+</mj-section>
+
+<mj-section mj-class="address-footer">
+   <mj-column>
+      <mj-text>
+         If you have any questions, reply to this email or contact us at
+         <a class="grey" href="mailto:contact@yumeibrand.com" target="_blank">contact@yumeibrand.com</a>
+      </mj-text>
+   </mj-column>
+</mj-section>

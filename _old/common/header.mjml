@@ -1,0 +1,19 @@
+<mj-section padding-top="46px">
+  <mj-class >
+      <mj-text mj-class="red-text flex-row justify-between">
+        <p> testing </p>
+        <p> testing </p>
+        <p> testing </p>
+      </mj-text>
+      <!-- <mj-image
+        src="https://cdn.shopify.com/s/files/1/2008/1977/files/logo_0de53c4f-946c-46f0-9848-59f0ddf84906.png?v=1651210445"
+        width="60px"
+      /> -->
+  </mj-class>
+</mj-section>
+
+<mj-section padding-top="50px" padding-bottom="50px">
+  <mj-column>
+    <mj-divider mj-class="divider" />
+  </mj-column>
+</mj-section>

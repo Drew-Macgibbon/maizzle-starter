@@ -1,0 +1,98 @@
+{
+  "email_title": "Preview",
+  "customer": {
+    "first_name": "John",
+    "account_activation_url": "https://yu-mei-bags.myshopify.com/account/activate/6075792228505/792c326e8620a5a698196dbff3087653-1652409497"
+  },
+  "custom_message": null,
+  "shop": {
+    "email_logo_url": "../img/logo.png",
+    "url": "https://binubinu.com"
+  },
+  "email_body": "Example abandoned cart text",
+  "unsubscribe_url": "https://google.com/",
+  "order_status_url": "https://google.com/",
+  "item_count": 2,
+  "amount": 980,
+  "total_price": 980,
+  "subtotal_price": 990,
+  "shipping_price": 10,
+  "total_discounts": 20,
+  "money_with_currency": " USD",
+  "line_items": [
+    {
+      "quantity": 2,
+      "image": "https://cdn.shopify.com/s/files/1/2008/1977/products/Braidy_Black-Deer-Nappa-1-s.jpg",
+      "title": "Braidy Bag / Black Deer Nappa",
+      "variant_title": "Default Title",
+      "refunded_quantity": 0,
+      "line_price": 100,
+      "original_line_price": 100,
+      "final_line_price": 100,
+      "variant": {
+        "sku": "0000-0001"
+      }
+    },
+    {
+      "quantity": 1,
+      "image": "https://cdn.shopify.com/s/files/1/2008/1977/products/Braidy_Black-Deer-Nappa-1-s.jpg",
+      "title": "Braidy Bag / Black Deer Nappa",
+      "variant_title": "Default Title",
+      "refunded_quantity": 0,
+      "line_price": 60,
+      "original_line_price": 100,
+      "final_line_price": 100,
+      "variant": {
+        "sku": "0000-0001"
+      }
+    }
+  ],
+  "billing_address": {
+    "name": "John Appleseed",
+    "first_name": "John",
+    "last_name": "Appleseed",
+    "address1": "1 Commerce St",
+    "city": "New York",
+    "province": "New York",
+    "zip": "10001",
+    "country": "United States"
+  },
+  "requires_shipping": true,
+  "shipping_address": {
+    "name": "John Appleseed",
+    "first_name": "John",
+    "last_name": "Appleseed",
+    "address1": "1 Commerce St",
+    "city": "New York",
+    "province": "New York",
+    "zip": "10001",
+    "country": "United States"
+  },
+  "shipping_method": {
+    "title": "Overnight"
+  },
+  "gateway": "Visa",
+  "fulfillment": {
+    "tracking_number": "1234567890",
+    "tracking_url": "https://google.com"
+  },
+  "order_name": "#9999",
+  "order": {
+    "name": "#9999",
+    "note": "This is a test"
+  },
+  "gift_card": {
+    "customer": {
+      "first_name": "John"
+    },
+    "balance": "1000",
+    "url": "https://google.com"
+  },
+  "location": {
+    "name": "Showroom",
+    "address1": "1 Appleseed Street",
+    "address2": "Charles Bay",
+    "city": "Auckland",
+    "zip": "1234"
+  }
+}

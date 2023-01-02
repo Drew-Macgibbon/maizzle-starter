@@ -1,0 +1,28 @@
+<mj-section>
+  <mj-column>
+    <mj-table padding="4px 0">
+      <tr>
+        <td width="">&nbsp;</td>
+        <td width="100px">Subtotal</td>
+        <td width="100px">{{ subtotal_price | money_with_currency }}</td>
+      </tr>
+    </mj-table>
+    <mj-divider mj-class="divider" />
+    <mj-table padding="4px 0">
+      <tr>
+        <td width="">&nbsp;</td>
+        <td width="100px">Shipping</td>
+        <td width="100px">{{ shipping_price | money_with_currency }}</td>
+      </tr>
+    </mj-table>
+    <mj-divider mj-class="divider" />
+    <mj-table padding="4px 0">
+      <tr>
+        <td width="">&nbsp;</td>
+        <td width="100px">Total</td>
+        <td width="100px">{{ total_price | money_with_currency }}</td>
+      </tr>
+    </mj-table>
+    <mj-divider mj-class="divider" />
+  </mj-column>
+</mj-section>

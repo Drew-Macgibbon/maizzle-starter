@@ -1,0 +1,16 @@
+<mj-section padding-bottom="20px">
+  <mj-column>
+    <mj-text>
+    <div class="button-wrapper">
+      <a
+        class="button"
+        href="https://yumeibrand.com/"
+        target="_blank"
+        rel="noopener noreferrer" 
+      >
+        View Store
+      </a>
+    </div>
+    </mj-text>
+  </mj-column>
+</mj-section>

@@ -1,0 +1,174 @@
+{% capture email_title %}Hi {{ customer.first_name }}, {% endcapture %}
+{% capture email_body %}<p>You created a new account with us at <a href="{{shop.url}}">Club Yu Mei</a>. Now, all you have to do is activate it to receive access to your VIP benefits.</p>
+{% endcapture %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>{{ email_title }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
+  <style>
+    .button__cell { background: {{ shop.email_accent_color }}; }
+    a, a:hover, a:active, a:visited { color: #3F3F3F; }
+    table {border-color: #3F3F3F;}
+    * {background-color:#866E2B !important;}
+    p {
+      color:#FFF;
+      font-family: helvetica;
+      font-size: 12px;
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 100;
+    }
+    p a {
+      color:#FFF;
+      font-family: helvetica;
+      font-size: 12px;
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 100;
+    }
+    .shop-name__cell {
+      text-align: center;
+      padding: 50px 20px;
+      line-height: 1;
+      border-bottom: none;
+    }
+    .shop-name__cell img{
+      width: 300px;
+    }
+    .actions__cell {
+      width: 50%;
+    }
+    .actions__cell--left {
+      padding-right: 15px;
+    }
+    .actions__cell--right {
+      padding-left: 15px;
+    }
+    .content__cell {
+      padding-bottom: 0;
+      padding-top: 28px;
+    }
+    .section {
+      border: none;
+    }
+    .section__cell {
+      padding: 40px 0 0;
+    }
+    .button {
+      border: none;
+      padding: 14px;
+      width: 100%;
+    }
+    .button__cell {
+      border-radius: 0;
+    }
+    .button__text {
+      color:#FFF;
+      font-size: 12px;
+      font-family: helvetica;
+      font-weight: 100;
+      padding: 14px;
+    }
+    .lp-sub-title {
+      font-size: 12px;
+      font-family: helvetica;
+      font-weight: 100;
+      color:#FFF;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .lp-sub-title p{
+      color:#FFF;
+    }
+    .lp-title-row {
+      padding: 6px 0;
+      display: block;
+      width: 100%;
+      border-top: none;
+      border-bottom: none;
+    }
+    .lp-title {
+      text-transform: uppercase;
+      font-family: helvetica;
+      font-weight: 100;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+    }
+    .lp-title p{
+      text-transform: uppercase;
+      font-family: helvetica;
+      font-weight: 100;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+    }
+    .lp-container-padding {
+      padding-top: 28px;
+    }
+    .header {
+      margin-bottom: 0;
+    }
+    .row {
+      border: none;
+    }
+    .container-spaced {
+      margin-bottom: 150px;
+    }
+  </style>
+</head>
+
+  <body>
+    <table class="body">
+      <tr>
+        <td>
+          <table class="header row">
+            <tr>
+              <td class="header__cell">
+                <center>
+                  <table class="container">
+                    <tr>
+                      <td>
+                        <table class="row">
+                          <tr>
+                          <td class="shop-name__cell">
+                            <img src="https://cdn.shopify.com/s/files/1/2008/1977/files/yumeiclub.jpg?v=1598161850" alt="{{ shop.name }}" width="{{ shop.email_logo_width }}">
+                          </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </center>
+              </td>
+            </tr>
+          </table>
+        <table class="row content">
+          <tr>
+            <td class="content__cell">
+              <center>
+                <table class="container container-spaced">
+                  <tr>
+                    <td>
+                      <p>{{ email_title }}</p>
+                      {% if custom_message != blank %}
+                        <p>{{ custom_message }}</p>
+                      {% else %}
+                        <p>{{ email_body }}</p>
+                        <p><a href="{{ customer.account_activation_url }}">Click here to activate your account</a></p>
+<p>Yu Mei x</p>
+                      {% endif %}
+                      </td>
+                    </tr>
+                  </table>
+                </center>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

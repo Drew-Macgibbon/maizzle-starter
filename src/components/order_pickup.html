@@ -1,0 +1,38 @@
+<mj-raw>
+{% capture email_body %}Bring your confirmation email when you come to <br>collect your order.{% endcapture %}
+</mj-raw>
+
+<mj-section mj-class="main-copy-section">
+  <tr mj-class="main-copy-column">
+    <mj-text mj-class="main-copy-text">
+      <p>
+        Your order is ready for pickup
+      </p>
+      <p>
+        {% if pickup_instructions != blank %}
+          <p>{{ pickup_instructions }}</p>
+        {% else %}
+          <p>{{ email_body }}</p>
+        {% endif %}
+      </p>
+    </mj-text>
+  </tr>
+</mj-section> 
+
+
+<mj-section mj-class="pickup-section">
+  <tr mj-class="pickup-column">
+    <mj-text mj-class="pickup-text">
+      <p>
+        {{ location.name }},<br>
+        {% if location.address1 != blank %}
+        {{ location.address1 }},<br>
+        {% endif %}
+        {% if location.address2 != blank %}
+        {{ location.address2 }},<br>
+        {% endif %}
+        {{ location.city | capitalize }} {{ location.province | capitalize }} {{ location.zip | upcase }}
+      </p>
+    </mj-text>
+  </tr>
+</mj-section>

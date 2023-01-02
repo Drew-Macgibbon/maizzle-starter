@@ -1,0 +1,26 @@
+<mj-section 
+  padding="50px 0 46px"
+  text-align="left"
+>
+  <mj-column width="206px">
+    <mj-text mj-class="footer-heading">
+      Customer Care
+    </mj-text>
+    <mj-text>
+      <a target="_blank" href="https://yumeibrand.com/contact">Contact</a></br>
+      <a target="_blank" href="https://yumeibrand.com/general-care">Bag Care</a></br>
+      <a target="_blank" href="https://yumeibrand.com/buyback">Buyback Initiative</a></br>
+      <a target="_blank" href="https://yumeibrand.com/yu-mei-lounges">Our Lounges</a>
+    </mj-text>
+  </mj-column>
+
+  <mj-column>
+    <mj-text mj-class="footer-heading">
+      Social
+    </mj-text>
+    <mj-text>
+      <a target="_blank" href="https://www.facebook.com/yumeibrand/">Facebook</a></br>
+      <a target="_blank" href="https://www.instagram.com/yumeibrand/">Instagram</a>
+    </mj-text>
+  </mj-column>
+</mj-section>

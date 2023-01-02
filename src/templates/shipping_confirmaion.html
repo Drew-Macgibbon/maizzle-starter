@@ -1,0 +1,84 @@
+---
+title_1: Your order has been shipped
+subtitle: Your order is on it's way
+---
+
+<extends src="src/layouts/main.html">
+  <block name="template">
+    <component src="src/components/wrapper.html">
+      <!-- <component src="src/components/abandoned_cart.html"></component> -->
+      <!-- <component src="src/components/head.html"> -->
+      <component src="src/components/header.html"></component>
+      <component src="src/components/title.html">
+        <p class="text-caption-all pb-[16px] pt-[32px] max-w-[252px]">
+          You can check out the shipping details or track your order by clicking
+          thelink below.
+        </p>
+        <div
+          class="max-w-[131px] bg-black w-full h-[32px] flex justify-center items-center font-primary font-normal"
+        >
+          <a
+            class="text-[#ffff] text-center no-underline text-body leading-body tracking-body"
+            href="https://www.yumeibrand.com/?action=ACTIVATE&amp;url={{ customer.account_activation_url | escape }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tracking Number
+          </a>
+        </div>
+      </component>
+      <component src="src/components/details.html"></component>
+      <component src="src/components/spacer_80.html"></component>
+      <component src="src/components/row_bt.html">
+        <p class="w-full">Order #2012</p>
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+      </component>
+      <component src="src/components/items.html"></component>
+      <component src="src/components/row_bt.html">
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+        <p class="w-full">Subtotal:</p>
+        <if condition="page.env === 'shopify'">
+          <p class="w-full">@{{ subtotal_price | money_with_currency }}</p>
+        </if>
+        <else>
+          <p class="w-full">${{ subtotal_price + money_with_currency }}</p>
+        </else>
+      </component>
+      <component src="src/components/row_bt.html">
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+        <p class="w-full">Shipping:</p>
+        <if condition="page.env === 'shopify'">
+          <p class="w-full">@{{ shipping_price | money_with_currency }}</p>
+        </if>
+        <else>
+          <p class="w-full">${{ shipping_price + money_with_currency }}</p>
+        </else>
+      </component>
+      <component src="src/components/row_bordered.html">
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+        <p class="w-full">Tax:</p>
+        <p class="w-full">$0.00</p>
+      </component>
+      <component src="src/components/row_bt_thick.html">
+        <p class="w-full">Total:</p>
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+        <if condition="page.env === 'shopify'">
+          <p class="w-full">$@{{ total_price | money_with_currency }}</p>
+        </if>
+        <else>
+          <p class="w-full">${{ total_price + money_with_currency }}</p>
+        </else>
+      </component>
+      <component src="src/components/button.html"> View Order</component>
+      <component src="src/components/footer.html"></component>
+      <!-- <component src="src/components/addresses.html"></component> -->
+    </component>
+  </block>
+</extends>
+z

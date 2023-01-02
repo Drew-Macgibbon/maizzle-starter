@@ -1,0 +1,51 @@
+<if condition="page.env === 'shopify'">
+  <raw>
+    <table class="w-full">
+      <tr class="w-full flex justify-between">
+        <td class="column w-full">  
+          <p class="bg-red-100 p-0 m-0">
+            {% billing_address.name %} {% if item_count == 1 %} 
+            Hi, @{{ billing_address.name }}
+            {% else %}
+            Hi, @{{ billing_address.name }}
+            {% endif %} {% else %} Hi, {% endif %}
+          </p>
+        </td>
+        <td class="column w-full flex justify-end p-0 m-0">
+          <a href="">
+            <img
+            src="./images/logo.png"
+            alt="Maizzle"
+            width="70"
+            class="max-w-full"
+            />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </raw>
+</if>
+<else>
+    <table class="w-full">
+      <tr class="w-full flex justify-between">
+        <td class="column w-full">
+            <p class="p-0 m-0 text-body font-primary">
+              <if condition="billing_address.name">
+                Hi, {{ billing_address.name }}
+              </if>
+              <else> Hi, </else>
+            </p>
+        </td>
+      <td class="column w-full flex justify-end p-0 m-0">
+        <a href="">
+          <img
+          src="./images/logo.png"
+          alt="Maizzle"
+            width="70"
+            class="max-w-full"
+            />
+          </a>
+        </td>
+      </tr>
+    </table>
+</else>

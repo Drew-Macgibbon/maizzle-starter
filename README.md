@@ -18,6 +18,29 @@
   </div>
 </div>
 
+## Learnings:
+
+
+- for liquid support in vsCode "emmet.includeLanguages": { "liquid": "html" },
+- `<component></component>` does not allow self-closing
+- make sure to rebuild dev server if you change any of the data or config files
+- nested folders in the templates folder will break the asset imports
+- Passing ignored variables to components needs to follow this syntax:  ``@{{ name | fallback: 'friend' }}``
+- For some reason it seems to only work in ``components`` if I include escaped variables  ``@{{ name | fallback: 'friend' }}`` within the ``<raw>`` element
+
+
+## Checking emails
+
+- https://www.mail-tester.com/
+- https://www.caniemail.com/
+- https://www.emailonacid.com/
+- https://litmus.com/
+- https://alter.email/
+- https://putsmail.com/tests/new
+
+
+
+
 ## Getting Started
 
 Clone this starter:

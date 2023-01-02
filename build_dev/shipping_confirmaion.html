@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+  <meta charset="utf-8">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings xmlns:o="urn:schemas-microsoft-com:office:office">
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <style>
+    td,th,div,p,a,h1,h2,h3,h4,h5,h6 {font-family: "Segoe UI", sans-serif; mso-line-height-rule: exactly;}
+  </style>
+  <![endif]-->
+  
+    <title>Testing Company name</title>
+  <style>/* Tailwind CSS components */
+.container {
+  width: 100%;
+}
+/**
+* @import here any custom CSS components - that is, CSS that
+* you'd want loaded before the Tailwind utilities, so the
+* utilities can still override them.
+*/
+.border-left {
+  border-left: 1px solid #DBD9D3;
+}
+a.button { 
+    display:block;
+    padding: 5px 12px;
+    background: #414042; 
+    border: 1px solid #414042; 
+    color:#fff !important;
+    text-align:center;
+    margin-top: 20px;
+  }
+a.button:hover {
+    background: #000 !important;
+  }
+a.grey { 
+    color:#8D8D8D !important;
+  }
+a.grey:hover {
+    color: #414042 !important;
+  }
+a:hover { text-decoration: none !important; }
+.type-body-s {
+    font-size: 9px;
+  }
+.border-tb {
+    border-top: 1px solid #DBD9D3;
+    border-bottom: 1px solid #DBD9D3;
+  }
+.border-t {
+    border-top: 1px solid #DBD9D3;
+  }
+.border-t-thick {
+    border-top: 2px solid #000;
+  }
+html {
+    font-weight: 400;
+    font-family: "Georgia", serif;
+  }
+a {
+    color: #8C8C8C;
+  }
+p {
+    margin: 0;
+  }
+/* Tailwind CSS utility classes */
+.absolute {
+  position: absolute !important;
+}
+.m-0 {
+  margin: 0 !important;
+}
+.mb-40px {
+  margin-bottom: 40px !important;
+}
+.mb-120px {
+  margin-bottom: 120px !important;
+}
+.mt-16px {
+  margin-top: 16px !important;
+}
+.mb-16px {
+  margin-bottom: 16px !important;
+}
+.mt-8 {
+  margin-top: 32px !important;
+}
+.mt-120px {
+  margin-top: 120px !important;
+}
+.mt-40px {
+  margin-top: 40px !important;
+}
+.mt-80px {
+  margin-top: 80px !important;
+}
+.mb-80px {
+  margin-bottom: 80px !important;
+}
+.block {
+  display: block !important;
+}
+.inline {
+  display: inline !important;
+}
+.flex {
+  display: flex !important;
+}
+.table {
+  display: table !important;
+}
+.hidden {
+  display: none !important;
+}
+.h-32px {
+  height: 32px !important;
+}
+.h-full {
+  height: 100% !important;
+}
+.h-250px {
+  height: 250px !important;
+}
+.w-full {
+  width: 100% !important;
+}
+.w-1-5 {
+  width: 20% !important;
+}
+.w-2-5 {
+  width: 40% !important;
+}
+.w-600px {
+  width: 600px !important;
+}
+.max-w-full {
+  max-width: 100% !important;
+}
+.max-w-252px {
+  max-width: 252px !important;
+}
+.max-w-131px {
+  max-width: 131px !important;
+}
+.flex-row {
+  flex-direction: row !important;
+}
+.flex-col {
+  flex-direction: column !important;
+}
+.items-center {
+  align-items: center !important;
+}
+.justify-start {
+  justify-content: flex-start !important;
+}
+.justify-end {
+  justify-content: flex-end !important;
+}
+.justify-center {
+  justify-content: center !important;
+}
+.justify-between {
+  justify-content: space-between !important;
+}
+.gap-2 {
+  gap: 8px !important;
+}
+.gap-1 {
+  gap: 4px !important;
+}
+.rounded {
+  border-radius: 4px !important;
+}
+.border {
+  border-width: 1px !important;
+}
+.border-t {
+  border-top-width: 1px !important;
+}
+.border-b {
+  border-bottom-width: 1px !important;
+}
+.border-b-2px {
+  border-bottom-width: 2px !important;
+}
+.border-t-2px {
+  border-top-width: 2px !important;
+}
+.border-solid {
+  border-style: solid !important;
+}
+.border-black {
+  border-color: #000 !important;
+}
+.bg-red-100 {
+  background-color: #fee2e2 !important;
+}
+.bg-black {
+  background-color: #000 !important;
+}
+.bg-_F5F5F5 {
+  background-color: #F5F5F5 !important;
+}
+.bg-_F5F2EF {
+  background-color: #F5F2EF !important;
+}
+.p-0 {
+  padding: 0 !important;
+}
+.p-2 {
+  padding: 8px !important;
+}
+.py-8px {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+.px-16px {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+.py-1 {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+.py-2 {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+.py-40px {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+.pb-2 {
+  padding-bottom: 8px !important;
+}
+.pt-4 {
+  padding-top: 16px !important;
+}
+.pt-3 {
+  padding-top: 12px !important;
+}
+.pb-4 {
+  padding-bottom: 16px !important;
+}
+.pl-2 {
+  padding-left: 8px !important;
+}
+.pt-200px {
+  padding-top: 200px !important;
+}
+.pb-16px {
+  padding-bottom: 16px !important;
+}
+.pl-24px {
+  padding-left: 24px !important;
+}
+.pr-40px {
+  padding-right: 40px !important;
+}
+.pl-16px {
+  padding-left: 16px !important;
+}
+.pb-8px {
+  padding-bottom: 8px !important;
+}
+.pt-32px {
+  padding-top: 32px !important;
+}
+.pb-32px {
+  padding-bottom: 32px !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.align-middle {
+  vertical-align: middle !important;
+}
+.font-primary {
+  font-family: Georgia !important;
+}
+.text-body {
+  font-size: 12px !important;
+}
+.text-caption {
+  font-size: 10px !important;
+}
+.text-base {
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+}
+.font-normal {
+  font-weight: 400 !important;
+}
+.capitalize {
+  text-transform: capitalize !important;
+}
+.leading-body {
+  line-height: 14px !important;
+}
+.leading-caption {
+  line-height: 14px !important;
+}
+.leading-6 {
+  line-height: 1.5rem !important;
+}
+.tracking-body {
+  letter-spacing: -0.0025em !important;
+}
+.text-_ffff {
+  color: #ffff !important;
+}
+.text-_070707 {
+  color: #070707 !important;
+}
+.text-_8C8C8C {
+  color: #8C8C8C !important;
+}
+.text-slate-700 {
+  color: #334155 !important;
+}
+.no-underline {
+  text-decoration-line: none !important;
+}
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+.word-break-break-word {
+  word-break: break-word;
+}
+.-webkit-font-smoothing-antialiased {
+  -webkit-font-smoothing: antialiased;
+}
+.border-0 {
+  border: 0;
+}
+/* Your custom utility classes */
+/*
+ * Here is where you can define your custom utility classes.
+ *
+ * We wrap them in the `utilities` @layer directive, so
+ * that Tailwind moves them to the correct location.
+ *
+ * More info:
+ * https://tailwindcss.com/docs/functions-and-directives#layer
+*/
+:root {
+  color-scheme: light dark;
+}
+.text-body-all {
+  font-family: Georgia;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.0025em;
+}
+.text-caption-all {
+  font-family: Georgia;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.0025em;
+}
+.text-heading-all {
+  font-family: Georgia;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 600px) {
+  .sm-px-6 {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}</style>
+  
+</head>
+<body class="m-0 p-0 w-full word-break-break-word -webkit-font-smoothing-antialiased ">
+  <div role="article" aria-roledescription="email" aria-label="" lang="en">
+      
+    <table class="w-full h-full" cellpadding="0" cellspacing="0" role="presentation">
+  <tr class="w-full h-full bg-_F5F5F5">
+    <td align="center" class="py-40px">
+      <table class="w-600px bg-_F5F2EF pl-24px pr-40px py-40px sm-px-6 text-slate-700 text-base text-left leading-6 rounded shadow-sm" cellpadding="0" cellspacing="0" role="presentation">
+        <tr>
+          <td class="pl-16px border-left w-full h-full">
+            
+      <!-- <component src="src/components/abandoned_cart.html"></component> -->
+      <!-- <component src="src/components/head.html"> -->
+      
+    <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+      <tr class="w-full flex justify-between">
+        <td class="column w-full">
+            <p class="p-0 m-0 text-body font-primary">
+              
+                Hi, John Appleseed
+              </p>
+        </td>
+      <td class="column w-full flex justify-end p-0 m-0">
+        <a href>
+          <img src="./images/logo.png" alt="Maizzle" width="70" class="max-w-full">
+          </a>
+        </td>
+      </tr>
+    </table>
+
+      <table class="w-full mb-80px pt-200px" cellpadding="0" cellspacing="0" role="presentation">
+  <tr class="w-full flex flex-row justify-between">
+    <td class="column">
+      <h1 class=" text-heading-all m-0 pb-16px">
+        Your order has been shipped
+        </h1>
+      <p class="text-body-all max-w-252px">
+        Your order is on it&#039;s way
+      </p>
+      
+        <p class="text-caption-all pb-16px pt-32px max-w-252px">
+          You can check out the shipping details or track your order by clicking
+          thelink below.
+        </p>
+        <div class="max-w-131px bg-black w-full h-32px flex justify-center items-center font-primary font-normal">
+          <a class="text-_ffff text-center no-underline text-body leading-body tracking-body" href="https://www.yumeibrand.com/?action=ACTIVATE&amp;url=0" target="_blank" rel="noopener noreferrer">
+            Tracking Number
+          </a>
+        </div>
+      
+    </td>
+  </tr>
+</table>
+
+      <!-- shopify design -->
+
+    <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+        <tr class="w-full h-32px mb-16px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-tb">
+            <td class="flex flex-row justify-between w-full">
+                <p class="w-full">Details</p>
+                <p class="w-full"></p>
+                <p class="w-full"></p>
+                <p class="w-full"></p>
+            </td>
+        </tr>
+        <tr class="w-full flex flex-row justify-between text-body-all text-_070707">
+            <td class="column w-full">
+                <p class="pb-2 m-0">Shipping Address: </p>
+                <div>
+                    <p>
+                        John Appleseed
+                    </p>
+                    <p>
+                        1 Commerce St
+                        undefined 
+                    </p>
+                    <p>
+                        New York,
+                    </p>
+                    <p>
+                        New York
+                        10001
+                        United States
+                    </p>
+                </div>
+                <p class="pb-2 pt-4">Delivery Address: </p> 
+                <div>
+                    <p>
+                        John Appleseed
+                    </p>
+                    <p>
+                        1 Commerce St
+                        undefined
+                    </p>
+                    <p>
+                        New York,
+                    </p>
+                    <p>
+                        New York
+                        10001 United States
+                    </p>
+                </div>
+            </td>
+            <td class="column w-full flex flex-col gap-2">
+                <p>Payment Method: </p>
+                <p>Visa</p>
+                <p class="pt-3">Delivery Method: </p>
+                <p>Overnight</p>
+            </td>
+        </tr>
+    </table>
+
+      <table cellpadding="0" cellspacing="0" role="presentation">
+    <div class="mt-80px"></div>
+</table>
+      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t">
+    <td class="flex flex-row justify-between w-full">
+      
+        <p class="w-full">Order #2012</p>
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+      
+    </td>
+  </tr>
+</table>
+
+      
+  <table class="w-full h-full text-body-all" cellpadding="0" cellspacing="0" role="presentation">
+    <tr class="w-full flex justify-between border-t">
+      <td class="flex">
+        <img src="./images/item_1.png" alt="Maizzle" width="120">
+        <div class="pl-2 flex flex-col justify-between py-8px">
+          <div class="h-full w-full">
+            <p class="pb-2">
+              Niacinamide Heartleaf <br>
+              Calming Serum
+            </p>
+            <p>95ml / 3.2 fl.oz</p>
+          </div>
+          <p>$26.00 USD</p>
+        </div>
+      </td>
+      <td class="flex justify-end">
+        <p>Qty × 1</p>
+      </td>
+    </tr>
+    <tr class="w-full flex justify-between border-t">
+      <td class="flex">
+        <img src="./images/item_2.png" alt="Maizzle" width="120">
+        <div class="pl-2 flex flex-col justify-between py-8px">
+          <div class="h-full w-full">
+            <p class="pb-2">
+              Niacinamide Heartleaf <br>
+              Calming Serum
+            </p>
+            <p>95ml / 3.2 fl.oz</p>
+          </div>
+          <p>$26.00 USD</p>
+        </div>
+      </td>
+      <td class="flex justify-end">
+        <p>Qty × 1</p>
+      </td>
+    </tr>
+  </table>
+
+      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t">
+    <td class="flex flex-row justify-between w-full">
+      
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+        <p class="w-full">Subtotal:</p>
+        
+          <p class="w-full">$990 USD</p>
+        
+    </td>
+  </tr>
+</table>
+
+      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t">
+    <td class="flex flex-row justify-between w-full">
+      
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+        <p class="w-full">Shipping:</p>
+        
+          <p class="w-full">$10 USD</p>
+        
+    </td>
+  </tr>
+</table>
+
+      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-tb">
+    <td class="flex flex-row justify-between w-full">
+      
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+        <p class="w-full">Tax:</p>
+        <p class="w-full">$0.00</p>
+      
+    </td>
+  </tr>
+</table>
+
+      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t-thick">
+    <td class="flex flex-row justify-between w-full">
+      
+        <p class="w-full">Total:</p>
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+        
+          <p class="w-full">$980 USD</p>
+        
+    </td>
+  </tr>
+</table>
+
+      <table cellpadding="0" cellspacing="0" role="presentation">
+  <tr>
+    <div class="bg-black w-full h-32px mb-40px flex justify-center items-center font-primaryfont-normal">
+      <a class="text-_ffff text-center no-underline text-body leading-body tracking-body" href="https://www.yumeibrand.com/?action=ACTIVATE&amp;url=0" target="_blank" rel="noopener noreferrer">
+         View Order
+      </a>
+    </div>
+  </tr>
+</table>
+
+      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+    <tr class="w-full flex flex-row justify-between text-caption leading-caption gap-1 tracking-body">
+        <td class="column w-full">
+            <p>Inquiries: </p>
+            <p>Customer service: </p>
+            <a target="_blank" href="https://yumeibrand.com/contact" class="m-0">info@hyejaskincare.com</a><br>
+            
+            <p class="pb-4 mt-8">We Combined pristine quality Vegan EWG Ingredients with State-of-the-art Korean Technology
+                 to formulate the most Effective Skincare.</p>
+            <p class="text-_8C8C8C">© 2022 ASEZ CORP. All rights reserved.</p><br>
+        </td>
+        <td class="column w-full">
+            <p class="pb-2">Follow Us: </p>
+            <a target="_blank" href="https://www.facebook.com/yumeibrand/">Facebook</a><br>
+            <a target="_blank" href="https://www.instagram.com/yumeibrand/">Instagram</a><br>
+            <a target="_blank" href="https://www.instagram.com/yumeibrand/">Tiktok</a><br>
+        </td>
+        
+</tr>
+</table>
+
+      <!-- <component src="src/components/addresses.html"></component> -->
+    
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+  
+  </div>
+</body>
+</html>
+
+z
