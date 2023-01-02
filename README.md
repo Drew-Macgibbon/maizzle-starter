@@ -29,6 +29,25 @@ yarn build:<config_name>
  -->
 ```
 
+Currently when creating templates for Shopify we have to separate the Liquid and Dev code.
+
+```javascript
+  <if condidion="page.environment == 'shopify'">
+    <raw>
+    <table>
+      // liquid code
+    </table>
+    </raw>
+  </if>
+  <else>
+    <table>
+      // dev code
+    </table>
+  </else>
+  ```
+
+This can likely be automated in the future.
+
 ### Todo
 
 - [ ] house multiple projects emails, use seperate config file & dynamic/seperated components
