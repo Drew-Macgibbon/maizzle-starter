@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "maizzle serve",
     "preview": "maizzle serve shopify",
-    "build": "maizzle build production"
+    "build": "maizzle build production",
+    "build:shopify": "maizzle build shopify"
   },
   "dependencies": {
     "@maizzle/framework": "latest",
