@@ -32,7 +32,7 @@ yarn build:<config_name>
 Currently when creating templates for Shopify we have to separate the Liquid and Dev code.
 
 ```javascript
-  <if condidion="page.environment == 'shopify'">
+  <if condition="page.environment == 'shopify'">
     <raw>
     <table>
       // liquid code
@@ -48,7 +48,7 @@ Currently when creating templates for Shopify we have to separate the Liquid and
 
 This can likely be automated in the future.
 
-### Todo
+### Todo (possible improvements)
 
 - [ ] house multiple projects emails, use seperate config file & dynamic/seperated components
 - [ ] refactor tailwind reusable components, set utilities
@@ -62,7 +62,7 @@ This can likely be automated in the future.
 - most Maizzle elements, eg. `<component></component>` do not allow self-closing
 - rebuild if you change ``test.json`` or config files
 - folders in  ``src/templates`` breaks asset imports (and likely other stuff)
-- ``@{{ name | fallback: 'friend' }}`` for passing ignored variables to components.
+- ``@{{ name | fallback: 'friend' }}`` for passing escaped variables to components.
 - only able to get escaped variables working (``@{{ name | fallback: 'friend' }}``) within the ``<raw>`` element of **components**
 
 If you've never coded emails before, [read this](https://explore.reallygoodemails.com/new-to-email-coding-heres-where-to-start-2494422f0bd4)
@@ -76,6 +76,6 @@ We need to evaluate and add the best to workflow
 - https://www.mail-tester.com/
 - https://www.emailonacid.com/
 - https://litmus.com/
+- https://www.putsmail.com/ 
 - https://alter.email/
 - https://putsmail.com/tests/new
-
