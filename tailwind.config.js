@@ -123,7 +123,7 @@ module.exports = {
       lineHeight: {
         0: '0px',
         'heading-lg': '48px',
-        heading: '32px',
+        heading: '26px',
         'heading-sm': '24px',
         'heading-korean': '18px',
         'body-lg': '20px',
