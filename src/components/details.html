@@ -1,140 +1,142 @@
 <!-- shopify design -->
 <if condition="page.env === 'shopify'">
-    <raw>
-        <table
-            class="w-full mb-[120px]  mt-[16px] "
-        >
-        <tr class="w-full flex flex-row justify-between font-primaryfont-normal text-body tracking-body leading-body text-[#070707]">
-            <td class="column w-full">
-                <p class="pb-2 m-0">Shipping Address: </p>
-                <div class="">
-                    {% if shipping_address.address1 %}
-                    <br />
-                    <p>
-                        @{{ shipping_address.name }}
-                    </p>
-                    <p>
-                        @{{ shipping_address.address1 }}
-                        {% endif %}
-                        {% if shipping_address.address2 %}
-                        <br />@{{ shipping_address.address2 }} 
-                        {% endif %}
-                    </p>
-                    <p>
-                        {% if shipping_address.city %}
-                        <br />
-                        @{{ shipping_address.city }},
-                        {% endif %}
-                    </p>
-                    <p>
-                        {% if shipping_address.province %}
-                        @{{ shipping_address.province }}
-                        {% endif %}
-                        @{{ shipping_address.zip }}
-                        <br />
-                        @{{ shipping_address.country }}
-                    </p>
-                </div>
-                    <p class="pb-2 pt-4">Delivery Address: </p> 
-                    <div class="">
-                        <br />
-                        <p>
-                            @{{ billing_address.name }}
-                        </p>
-                        <p>
-                            {% if billing_address.address1 %}
-                            <br />
-                            @{{ billing_address.address1 }}
-                            {% endif %}
-                            {% if billing_address.address2 %}
-                            <br />
-                            @{{ billing_address.address2 }}
-                            {% endif %}
-                        </p>
-                        <p>
-                            {% if billing_address.city %}
-                            <br />
-                            @{{ shipping_address.city }},
-                            {% endif %}
-                        </p>
-                        <p>
-                        {% if billing_address.province %}
-                        @{{ billing_address.province }}
-                        {% endif %}
-                        @{{ billing_address.zip }} @{{ billing_address.country }}
-                        </p>
-                    </div>
-                </td>
-                <td class="column w-full flex flex-col gap-2">
-                    {% if gateway %}
-                    <p>Payment Method: </p>
-                    <p>@{{ gateway }}</p></br>
+  <raw>
+    <table class="w-full">
+      <tbody>
+        <tr>
+          <td class="h-[1px] bg-[#DBD9D3] w-full"></td>
+        </tr>
+        <tr class="w-full h-[32px] text-body-all">
+          <td class="w-full mb-[16px]">
+            <p class="w-full text-middle">Details</p>
+            <p class="w-full"></p>
+            <p class="w-full"></p>
+            <p class="w-full"></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="h-[1px] bg-[#DBD9D3] w-full"></td>
+        </tr>
+        <tr class="column-2 text-body-all text-[#070707]">
+          <td class="column pt-[16px]">
+            <p class="pb-[8px] m-0">Shipping Address:</p>
+            <table>
+              <tr>
+                <td>
+                  {% if shipping_address.address1 %}
+                  <p>@{{ shipping_address.name }}</p>
+                  <p>
+                    @{{ shipping_address.address1 }} {% endif %} {% if
+                    shipping_address.address2 %} @{{ shipping_address.address2
+                    }} {% endif %}
+                  </p>
+                  <p>
+                    {% if shipping_address.city %} @{{ shipping_address.city }},
                     {% endif %}
-                    {% if shipping_method.title %}
-                    <p class="pt-3">Delivery Method: </p>
-                    <p>@{{ shipping_method.title }}</p></br>
-                    {% endif %}
+                  </p>
+                  <p>
+                    {% if shipping_address.province %} @{{
+                    shipping_address.province }} {% endif %} @{{
+                    shipping_address.zip }} @{{ shipping_address.country }}
+                  </p>
                 </td>
-            </tr>
-        </table>
-    </raw>
+              </tr>
+            </table>
+            <h5 class="pb-[8px] pt-[16px]">Delivery Address:</h5>
+            <table>
+              <tr>
+                <td>
+                  <p>@{{ billing_address.name }}</p>
+                  <p>
+                    {% if billing_address.address1 %} @{{
+                    billing_address.address1 }} {% endif %} {% if
+                    billing_address.address2 %} @{{ billing_address.address2 }}
+                    {% endif %}
+                  </p>
+                  <p>
+                    {% if billing_address.city %} @{{ shipping_address.city }},
+                    {% endif %}
+                  </p>
+                  <p>
+                    {% if billing_address.province %} @{{
+                    billing_address.province }} {% endif %} @{{
+                    billing_address.zip }} @{{ billing_address.country }}
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="column pt-[16px]">
+            <h5 class="pb-[8px]">Payment Method:</h5>
+            <table>
+              <tr>
+                <td>
+                  {% if gateway %}
+                  <p>@{{ gateway | capitalize }}</p>
+                  {% endif %} {% if shipping_method.title %}
+                  <p class="pt-[16px] pb-[8px]">Delivery Method:</p>
+                  <p>@{{ shipping_method.title }}</p>
+                  {% endif %}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </raw>
 </if>
 <else>
-    <table
-            class="w-full"
-        >
-        <tr class="w-full h-[32px] mb-[16px] flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-tb">
-            <td class="flex flex-row justify-between w-full">
-                <p class="w-full">Details</p>
-                <p class="w-full"></p>
-                <p class="w-full"></p>
-                <p class="w-full"></p>
+  <table class="w-full">
+    <tr class="w-full h-[32px] text-body-all border-tb">
+      <td class="flex flex-row justify-between w-full">
+        <p class="w-full py-[8px]">Details</p>
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+        <p class="w-full"></p>
+      </td>
+    </tr>
+    <tr class="column-2 w-full text-body-all text-[#070707]">
+      <td class="column pt-[16px]">
+        <h5>Shipping Address:</h5>
+        <table>
+          <tr>
+            <td class="pt-[8px]">
+              <p>{{ shipping_address.name }}</p>
+              <p>
+                {{ shipping_address.address1 }} {{ shipping_address.address2 }}
+              </p>
+              <p>{{ shipping_address.city }},</p>
+              <p>
+                {{ shipping_address.province }} {{ shipping_address.zip }} {{
+                shipping_address.country }}
+              </p>
             </td>
-        </tr>
-        <tr class="w-full flex flex-row justify-between text-body-all text-[#070707]">
-            <td class="column w-full">
-                <p class="pb-2 m-0">Shipping Address: </p>
-                <div class="">
-                    <p>
-                        {{ shipping_address.name }}
-                    </p>
-                    <p>
-                        {{ shipping_address.address1 }}
-                        {{ shipping_address.address2 }} 
-                    </p>
-                    <p>
-                        {{ shipping_address.city }},
-                    </p>
-                    <p>
-                        {{ shipping_address.province }}
-                        {{ shipping_address.zip }}
-                        {{ shipping_address.country }}
-                    </p>
-                </div>
-                <p class="pb-2 pt-4">Delivery Address: </p> 
-                <div class="">
-                    <p>
-                        {{ billing_address.name }}
-                    </p>
-                    <p>
-                        {{ billing_address.address1 }}
-                        {{ billing_address.address2 }}
-                    </p>
-                    <p>
-                        {{ shipping_address.city }},
-                    </p>
-                    <p>
-                        {{ billing_address.province }}
-                        {{ billing_address.zip }} {{ billing_address.country }}
-                    </p>
-                </div>
+          </tr>
+        </table>
+        <h5 class="pt-[16px] pb-[8px]">Delivery Address:</h5>
+        <table>
+          <tr>
+            <td>
+              <p>{{ billing_address.name }}</p>
+              <p>
+                {{ billing_address.address1 }} {{ billing_address.address2 }}
+              </p>
+              <p>{{ shipping_address.city }},</p>
+              <p>
+                {{ billing_address.province }} {{ billing_address.zip }} {{
+                billing_address.country }}
+              </p>
             </td>
-            <td class="column w-full flex flex-col gap-2">
-                <p>Payment Method: </p>
-                <p>{{ gateway }}</p>
-                <p class="pt-3">Delivery Method: </p>
-                <p>{{ shipping_method.title }}</p>
-            </td>
-        </tr>
-    </table>
-</else>    
+          </tr>
+        </table>
+      </td>
+      <td class="column pt-[16px]">
+        <p class="pb-[8px]">Payment Method:</p>
+        <p>{{ gateway }}</p>
+        <p class="pt-[16px] pb-[8px]">Delivery Method:</p>
+        <p>{{ shipping_method.title }}</p>
+      </td>
+    </tr>
+  </table>
+</else>

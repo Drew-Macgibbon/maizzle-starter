@@ -1,72 +1,100 @@
 <if condition="page.env === 'shopify'">
   <raw>
-    <table class="w-full h-full">  
-      <tr class="w-full flex justify-between border-t">
-        <td class="flex">
-          {% for line in line_items %}
-          {% assign title = line.title | split: '/' %}
-          <img src="@{{ line.image  | img_url: '120x120' }}" width="120" />
-          <div
-          class="pl-2 text-body-all flex flex-col justify-between py-[8px]"
-          >
-            <div class="h-full w-full">
-              <p class="pb-2">
-                @{{ title[0] }}<br />
-                @{{ title[1] }}
-              </p>
-            </div>
-            <p>@{{ line.line_price | money_with_currency }}</p>
-          </div>
-        </td>
-        <td class="h`-full flex justify-end pt-[8px]">
-          @{{ line.quantity }}
-        </td>
+    <table class="w-full h-full text-body-all">
+      <tbody>
+        {% for line in line_items %} {% assign title = line.title | split: '/'
+        %}
+        <tr>
+          <td class="h-[1px] bg-[#DBD9D3] w-full"></td>
+        </tr>
+        <tr class="w-full h-[120px] max-h-[120px]">
+          <td>
+            <table class="column-3 w-full max-h-full h-[120px]">
+              <tr>
+                <td class="w-[118px]">
+                  <img src="@{{ line.image  | img_url: '120x120', crop: 'center'  }}"
+                    style="width: 120px; height: 120px; vertical-align:top;"
+                  alt="">
+                </td>
+                <td class="w-full py-[8px] pl-[8px] h-full">
+                  <table class="h-full">
+                    <tr>
+                      <td valign="top">
+                        <p class="pb-8px max-w-[140px]">
+                          @{{ title[0] }} @{{ title[1] }}
+                          <br>
+                          <span>
+                            95ml / 3.2 fl.oz
+                          </span>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr valign="bottom">
+                      <td>
+                        <p>
+                          @{{ line.line_price | money_with_currency }}
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td valign="top">
+                  <p class="pt-[8px] pr-[8px] w-[80px]" align="right">
+                    Qty x @{{ line.quantity }}
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
         {% endfor %}
-      </tr>
+      </tbody>
     </table>
   </raw>
 </if>
 <else>
   <table class="w-full h-full text-body-all">
-    <tr class="w-full flex justify-between border-t">
-      <td class="flex">
-        <img src="./images/item_1.png" alt="Maizzle" width="120" />
-        <div
-          class="pl-2 flex flex-col justify-between py-[8px]"
-        >
-          <div class="h-full w-full">
-            <p class="pb-2">
-              Niacinamide Heartleaf <br />
-              Calming Serum
-            </p>
-            <p>95ml / 3.2 fl.oz</p>
-          </div>
-          <p>$26.00 USD</p>
-        </div>
-      </td>
-      <td class="flex justify-end pt-[8px]">
-        <p>Qty × 1</p>
+    <tr>
+      <td class="h-[1px] bg-[#DBD9D3] w-full"></td>
+    </tr>
+    <tr class="w-full h-[120px] max-h-[120px]">
+      <td>
+        <table class="column-3 w-full pl-[8px] py-[8px] max-h-full h-[120px]">
+          
+          <tr>
+            <td class="w-[118px]">
+              <img src="./images/item_1.png" alt="Maizzle" width="120" />
+            </td>
+            <td class="w-full py-[8px] pl-[8px] align-top h-full">
+              <table class="h-full">
+                <tr>
+                  <td valign="top">
+                    <p class="pb-8px max-w-140px">
+                        Niacinamide Heartleaf
+                      <span>
+                        95ml / 3.2 fl.oz
+                      </span>
+                    </p>
+                  </td>
+                </tr>
+                <tr valign="bottom">
+                  <td>
+                    <p>
+                      $26.00 USD
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td valign="top">
+              <p class="pt-[8px] pr-[8px] w-[80px]" align="right">
+                Qty x 1
+              </p>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
-    <tr class="w-full flex justify-between border-t">
-      <td class="flex">
-        <img src="./images/item_2.png" alt="Maizzle" width="120" />
-        <div
-          class="pl-2 flex flex-col justify-between py-[8px]"
-        >
-          <div class="h-full w-full">
-            <p class="pb-2">
-              Niacinamide Heartleaf <br />
-              Calming Serum
-            </p>
-            <p>95ml / 3.2 fl.oz</p>
-          </div>
-          <p>$26.00 USD</p>
-        </div>
-      </td>
-      <td class="flex justify-end pt-[8px]">
-        <p>Qty × 1</p>
-      </td>
-    </tr>
-  </table>
+  </tbody>
+</table>
 </else>

@@ -21,16 +21,24 @@
     font-size: 9px;
   }
 
-  .border-tb {
-    border-top: 1px solid #DBD9D3;
-    border-bottom: 1px solid #DBD9D3;
+  
+  .column-2 .column {
+    width: 50%;
+    max-width: 260px;
+    display: inline-block;
+    vertical-align: top;
   }
   
-  .border-t {
-    border-top: 1px solid #DBD9D3;
+  .column-3 .column {
+    width: 33%;
+    max-width: 173px;
+    display: inline-block;
+    vertical-align: top;
   }
-  
-  .border-t-thick {
-    border-top: 2px solid #000;
+  .column-4 .column {
+    width: 25%;
+    max-width: 260px;
+    display: inline-block;
+    vertical-align: top;
   }
 }

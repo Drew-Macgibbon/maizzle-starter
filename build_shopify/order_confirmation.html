@@ -22,335 +22,282 @@
   
     <title>Testing Company name</title>
   <style>/* Tailwind CSS components */
-.container {
-  width: 100%;
-}
+@tailwind components;
 /**
 * @import here any custom CSS components - that is, CSS that
 * you'd want loaded before the Tailwind utilities, so the
 * utilities can still override them.
 */
-.border-left {
-  border-left: 1px solid #dbd9d3;
-}
-a.button { 
-    display:block;
-    padding: 5px 12px;
-    background: #414042; 
-    border: 1px solid #414042; 
-    color:#fff !important;
-    text-align:center;
-    margin-top: 20px;
-  }
-a.button:hover {
-    background: #000 !important;
-  }
-a.grey { 
-    color:#8D8D8D !important;
-  }
-a.grey:hover {
-    color: #414042 !important;
-  }
-a:hover { text-decoration: none !important; }
-.type-body-s {
-    font-size: 9px;
-  }
-.border-tb {
-    border-top: 1px solid #dbd9d3;
-    border-bottom: 1px solid #dbd9d3;
-  }
-.border-t {
-    border-top: 1px solid #dbd9d3;
-  }
-.border-t-thick {
-    border-top: 2px solid #000;
-  }
-html {
-    font-weight: 400;
-    font-family: "Georgia", serif;
-  }
-a {
-    color: #8C8C8C;
-  }
-p {
-    margin: 0;
-  }
 /* Tailwind CSS utility classes */
-.absolute {
-  position: absolute !important;
+.fixed{
+    position: fixed !important;
 }
-.m-0 {
-  margin: 0 !important;
+.absolute{
+    position: absolute !important;
 }
-.mb-40px {
-  margin-bottom: 40px !important;
+.m-0{
+    margin: 0 !important;
 }
-.mb-120px {
-  margin-bottom: 120px !important;
+.mb-40px{
+    margin-bottom: 40px !important;
 }
-.mt-16px {
-  margin-top: 16px !important;
+.mb-16px{
+    margin-bottom: 16px !important;
 }
-.mb-16px {
-  margin-bottom: 16px !important;
+.mt-36px{
+    margin-top: 36px !important;
 }
-.mt-8 {
-  margin-top: 32px !important;
+.block{
+    display: block !important;
 }
-.mt-120px {
-  margin-top: 120px !important;
+.flex{
+    display: flex !important;
 }
-.mt-40px {
-  margin-top: 40px !important;
+.table{
+    display: table !important;
 }
-.mt-80px {
-  margin-top: 80px !important;
+.hidden{
+    display: none !important;
 }
-.mb-80px {
-  margin-bottom: 80px !important;
+.h-1px{
+    height: 1px !important;
 }
-.block {
-  display: block !important;
+.h-32px{
+    height: 32px !important;
 }
-.inline {
-  display: inline !important;
+.h-full{
+    height: 100% !important;
 }
-.flex {
-  display: flex !important;
+.h-120px{
+    height: 120px !important;
 }
-.table {
-  display: table !important;
+.h-2px{
+    height: 2px !important;
 }
-.hidden {
-  display: none !important;
+.max-h-120px{
+    max-height: 120px !important;
 }
-.h-32px {
-  height: 32px !important;
+.max-h-full{
+    max-height: 100% !important;
 }
-.h-full {
-  height: 100% !important;
+.min-h-120px{
+    min-height: 120px !important;
 }
-.h-250px {
-  height: 250px !important;
+.min-h-16px{
+    min-height: 16px !important;
 }
-.w-full {
-  width: 100% !important;
+.min-h-200px{
+    min-height: 200px !important;
 }
-.w-1-5 {
-  width: 20% !important;
+.min-h-40px{
+    min-height: 40px !important;
 }
-.w-2-5 {
-  width: 40% !important;
+.min-h-56px{
+    min-height: 56px !important;
 }
-.w-600px {
-  width: 600px !important;
+.min-h-80px{
+    min-height: 80px !important;
 }
-.max-w-full {
-  max-width: 100% !important;
+.w-full{
+    width: 100% !important;
 }
-.max-w-252px {
-  max-width: 252px !important;
+.w-118px{
+    width: 118px !important;
 }
-.max-w-131px {
-  max-width: 131px !important;
+.w-80px{
+    width: 80px !important;
 }
-.flex-row {
-  flex-direction: row !important;
+.w-600px{
+    width: 600px !important;
 }
-.flex-col {
-  flex-direction: column !important;
+.min-w-131px{
+    min-width: 131px !important;
 }
-.items-center {
-  align-items: center !important;
+.max-w-full{
+    max-width: 100% !important;
 }
-.justify-start {
-  justify-content: flex-start !important;
+.max-w-140px{
+    max-width: 140px !important;
 }
-.justify-end {
-  justify-content: flex-end !important;
+.max-w-252px{
+    max-width: 252px !important;
 }
-.justify-center {
-  justify-content: center !important;
+.cursor-pointer{
+    cursor: pointer !important;
 }
-.justify-between {
-  justify-content: space-between !important;
+.flex-row{
+    flex-direction: row !important;
 }
-.gap-2 {
-  gap: 8px !important;
+.items-center{
+    align-items: center !important;
 }
-.gap-1 {
-  gap: 4px !important;
+.justify-start{
+    justify-content: flex-start !important;
 }
-.rounded {
-  border-radius: 4px !important;
+.justify-end{
+    justify-content: flex-end !important;
 }
-.border {
-  border-width: 1px !important;
+.justify-between{
+    justify-content: space-between !important;
 }
-.border-t {
-  border-top-width: 1px !important;
+.gap-1{
+    gap: 4px !important;
 }
-.border-b {
-  border-bottom-width: 1px !important;
+.border-t{
+    border-top-width: 1px !important;
 }
-.border-b-2px {
-  border-bottom-width: 2px !important;
+.bg-_DBD9D3{
+    background-color: #DBD9D3 !important;
 }
-.border-t-2px {
-  border-top-width: 2px !important;
+.bg-_070707{
+    background-color: #070707 !important;
 }
-.border-solid {
-  border-style: solid !important;
+.bg-_F5F5F5{
+    background-color: #F5F5F5 !important;
 }
-.border-black {
-  border-color: #000 !important;
+.bg-_F5F2EF{
+    background-color: #F5F2EF !important;
 }
-.bg-red-100 {
-  background-color: #fee2e2 !important;
+.bg-_000{
+    background-color: #000 !important;
 }
-.bg-black {
-  background-color: #000 !important;
+.p-0{
+    padding: 0 !important;
 }
-.bg-_F5F5F5 {
-  background-color: #F5F5F5 !important;
+.py-8px{
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
 }
-.bg-_F5F2EF {
-  background-color: #F5F2EF !important;
+.py-40px{
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
 }
-.p-0 {
-  padding: 0 !important;
+.pt-16px{
+    padding-top: 16px !important;
 }
-.p-2 {
-  padding: 8px !important;
+.pb-8px{
+    padding-bottom: 8px !important;
 }
-.py-8px {
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
+.pt-8px{
+    padding-top: 8px !important;
 }
-.px-16px {
-  padding-left: 16px !important;
-  padding-right: 16px !important;
+.pb-16px{
+    padding-bottom: 16px !important;
 }
-.py-1 {
-  padding-top: 4px !important;
-  padding-bottom: 4px !important;
+.pt-36px{
+    padding-top: 36px !important;
 }
-.py-2 {
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
+.pl-8px{
+    padding-left: 8px !important;
 }
-.py-40px {
-  padding-top: 40px !important;
-  padding-bottom: 40px !important;
+.pr-8px{
+    padding-right: 8px !important;
 }
-.pb-2 {
-  padding-bottom: 8px !important;
+.pr-16px{
+    padding-right: 16px !important;
 }
-.pt-4 {
-  padding-top: 16px !important;
+.pl-24px{
+    padding-left: 24px !important;
 }
-.pt-3 {
-  padding-top: 12px !important;
+.pl-16px{
+    padding-left: 16px !important;
 }
-.pb-4 {
-  padding-bottom: 16px !important;
+.pr-40px{
+    padding-right: 40px !important;
 }
-.pl-2 {
-  padding-left: 8px !important;
+.pt-32px{
+    padding-top: 32px !important;
 }
-.pt-200px {
-  padding-top: 200px !important;
+.pb-32px{
+    padding-bottom: 32px !important;
 }
-.pb-16px {
-  padding-bottom: 16px !important;
+.text-left{
+    text-align: left !important;
 }
-.pl-24px {
-  padding-left: 24px !important;
+.text-center{
+    text-align: center !important;
 }
-.pr-40px {
-  padding-right: 40px !important;
+.align-top{
+    vertical-align: top !important;
 }
-.pl-16px {
-  padding-left: 16px !important;
+.font-primary{
+    font-family: Georgia !important;
 }
-.pb-8px {
-  padding-bottom: 8px !important;
+.text-body{
+    font-size: 12px !important;
 }
-.pt-32px {
-  padding-top: 32px !important;
+.text-caption{
+    font-size: 10px !important;
 }
-.pb-32px {
-  padding-bottom: 32px !important;
+.text-base{
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
 }
-.text-left {
-  text-align: left !important;
+.font-normal{
+    font-weight: 400 !important;
 }
-.text-center {
-  text-align: center !important;
+.capitalize{
+    text-transform: capitalize !important;
 }
-.text-right {
-  text-align: right !important;
+.leading-32px{
+    line-height: 32px !important;
 }
-.align-middle {
-  vertical-align: middle !important;
+.leading-caption{
+    line-height: 14px !important;
 }
-.font-primary {
-  font-family: Georgia !important;
+.leading-body{
+    line-height: 14px !important;
 }
-.text-body {
-  font-size: 12px !important;
+.leading-6{
+    line-height: 1.5rem !important;
 }
-.text-caption {
-  font-size: 10px !important;
+.tracking-body{
+    letter-spacing: -0.0025em !important;
 }
-.text-base {
-  font-size: 1rem !important;
-  line-height: 1.5rem !important;
+.text-_070707{
+    color: #070707 !important;
 }
-.font-normal {
-  font-weight: 400 !important;
+.text-_8C8C8C{
+    color: #8C8C8C !important;
 }
-.capitalize {
-  text-transform: capitalize !important;
+.text-_232323{
+    color: #232323 !important;
 }
-.leading-body {
-  line-height: 14px !important;
+.text-_030303{
+    color: #030303 !important;
 }
-.leading-caption {
-  line-height: 14px !important;
+.text-slate-700{
+    color: #334155 !important;
 }
-.leading-6 {
-  line-height: 1.5rem !important;
+.no-underline{
+    text-decoration-line: none !important;
 }
-.tracking-body {
-  letter-spacing: -0.0025em !important;
+.shadow-sm{
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
 }
-.text-_ffff {
-  color: #ffff !important;
+.column-2 .column {
+    width: 50% !important;
+    max-width: 260px !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+  }
+.column-3 .column {
+    width: 33% !important;
+    max-width: 173px !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+  }
+.column-4 .column {
+    width: 25% !important;
+    max-width: 260px !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+  }
+.word-break-break-word{
+    word-break: break-word;
 }
-.text-_070707 {
-  color: #070707 !important;
-}
-.text-_8C8C8C {
-  color: #8C8C8C !important;
-}
-.text-slate-700 {
-  color: #334155 !important;
-}
-.no-underline {
-  text-decoration-line: none !important;
-}
-.shadow-sm {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
-}
-.word-break-break-word {
-  word-break: break-word;
-}
-.-webkit-font-smoothing-antialiased {
-  -webkit-font-smoothing: antialiased;
-}
-.border-0 {
-  border: 0;
+.-webkit-font-smoothing-antialiased{
+    -webkit-font-smoothing: antialiased;
 }
 /* Your custom utility classes */
 /*
@@ -362,305 +309,552 @@ p {
  * More info:
  * https://tailwindcss.com/docs/functions-and-directives#layer
 */
+/*
+ * Here is where you can define your custom components.
+ *
+ * We wrap them in the `components` @layer directive, so
+ * that Tailwind moves them to the correct location.
+ *
+ * More info:
+ * https://tailwindcss.com/docs/functions-and-directives#layer
+*/
+a:link {
+    color: #8C8C8C !important;
+    text-decoration: underline;
+  }
+h5 {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.0025em;
+  }
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.0025em;
+  }
+p {
+    margin: 0;
+    color: #070707;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Georgia.woff2") format("woff2"), url("/fonts/Georgia.woff") format("woff");
+  }
+img {
+    border: 0;
+  }
+td {
+    padding: 0;
+  }
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    cellpadding: 0;
+    border: 0;
+    cellspacing: 0;
+  }
+body {
+    margin: 0;
+  }
+*, ::before, ::after{
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x:  ;
+    --tw-pan-y:  ;
+    --tw-pinch-zoom:  ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ordinal:  ;
+    --tw-slashed-zero:  ;
+    --tw-numeric-figure:  ;
+    --tw-numeric-spacing:  ;
+    --tw-numeric-fraction:  ;
+    --tw-ring-inset:  ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur:  ;
+    --tw-brightness:  ;
+    --tw-contrast:  ;
+    --tw-grayscale:  ;
+    --tw-hue-rotate:  ;
+    --tw-invert:  ;
+    --tw-saturate:  ;
+    --tw-sepia:  ;
+    --tw-drop-shadow:  ;
+    --tw-backdrop-blur:  ;
+    --tw-backdrop-brightness:  ;
+    --tw-backdrop-contrast:  ;
+    --tw-backdrop-grayscale:  ;
+    --tw-backdrop-hue-rotate:  ;
+    --tw-backdrop-invert:  ;
+    --tw-backdrop-opacity:  ;
+    --tw-backdrop-saturate:  ;
+    --tw-backdrop-sepia:  ;
+}
+::backdrop{
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x:  ;
+    --tw-pan-y:  ;
+    --tw-pinch-zoom:  ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ordinal:  ;
+    --tw-slashed-zero:  ;
+    --tw-numeric-figure:  ;
+    --tw-numeric-spacing:  ;
+    --tw-numeric-fraction:  ;
+    --tw-ring-inset:  ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur:  ;
+    --tw-brightness:  ;
+    --tw-contrast:  ;
+    --tw-grayscale:  ;
+    --tw-hue-rotate:  ;
+    --tw-invert:  ;
+    --tw-saturate:  ;
+    --tw-sepia:  ;
+    --tw-drop-shadow:  ;
+    --tw-backdrop-blur:  ;
+    --tw-backdrop-brightness:  ;
+    --tw-backdrop-contrast:  ;
+    --tw-backdrop-grayscale:  ;
+    --tw-backdrop-hue-rotate:  ;
+    --tw-backdrop-invert:  ;
+    --tw-backdrop-opacity:  ;
+    --tw-backdrop-saturate:  ;
+    --tw-backdrop-sepia:  ;
+}
+@font-face {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Georgia.woff2") format("woff2"), url("/fonts/Georgia.woff") format("woff");
+}
 :root {
   color-scheme: light dark;
 }
-.text-body-all {
-  font-family: Georgia;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 14px;
-  letter-spacing: -0.0025em;
+.text-body-all{
+    font-family: Georgia;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.0025em;
 }
-.text-caption-all {
-  font-family: Georgia;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 14px;
-  letter-spacing: -0.0025em;
+.text-middle{
+    line-height: 32px;
 }
-.text-heading-all {
-  font-family: Georgia;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 32px;
-  letter-spacing: -0.02em;
+.text-caption-all{
+    font-family: Georgia;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.0025em;
 }
-@media (max-width: 600px) {
-  .sm-px-6 {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
+.text-heading-all{
+    font-family: Georgia;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: -0.02em;
 }</style>
   
 </head>
 <body class="m-0 p-0 w-full word-break-break-word -webkit-font-smoothing-antialiased ">
   <div role="article" aria-roledescription="email" aria-label="" lang="en">
       
-    <table class="w-full h-full" cellpadding="0" cellspacing="0" role="presentation">
-  <tr class="w-full h-full bg-_F5F5F5">
-    <td align="center" class="py-40px">
-      <table class="w-600px bg-_F5F2EF pl-24px pr-40px py-40px sm-px-6 text-slate-700 text-base text-left leading-6 rounded shadow-sm" cellpadding="0" cellspacing="0" role="presentation">
-        <tr>
-          <td class="pl-16px border-left w-full h-full">
-            
-      <!-- <component src="src/components/abandoned_cart.html"></component> -->
-      <!-- <component src="src/components/head.html"> -->
+    <center class="w-full h-full bg-_F5F5F5 py-40px" style="table-layout: fixed">
+  <table class="w-600px bg-_F5F2EF shadow-sm" cellpadding="0" cellspacing="0" role="presentation">
+    <tbody>
+      <tr class="w-full">
+        <td class="py-40px text-slate-700 text-base text-left leading-6 w-full">
+          <table class=" h-full" cellpadding="0" cellspacing="0" role="presentation">
+            <tbody>
+              <tr>
+                <td class="h-full pr-16px pl-24px">
+                  <p style="background: #dbd9d3; padding-left: 1px" class="h-full">
+                  </p>
+                </td>
+                <td class="pl-16px pr-40px h-full w-full">
+                  
       
   
     <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-      <tr class="w-full flex justify-between">
-        <td class="column w-full">  
-          <p class="bg-red-100 p-0 m-0">
-            {% billing_address.name %} {% if item_count == 1 %} 
-            Hi, {{ billing_address.name }}
-            {% else %}
-            Hi, {{ billing_address.name }}
-            {% endif %} {% else %} Hi, {% endif %}
-          </p>
-        </td>
-        <td class="column w-full flex justify-end p-0 m-0">
-          <a href>
-            <img src="./images/logo.png" alt="Maizzle" width="70" class="max-w-full">
-          </a>
-        </td>
-      </tr>
+      <tbody>
+        <tr>
+          <td class="col" width="50%" align="left">
+            <p class="p-0 m-0 text-body-all">
+              {% if billing_address.name %} Hi, {{ billing_address.name }} {%
+              else %} Hi, {% endif %}
+            </p>
+          </td>
+          <td class="col" width="50%" align="right">
+            <a href="{{shop.url}}">
+              <img src="https://cdn.shopify.com/s/files/1/0669/3142/5601/files/logo-black.png?v=1673518490" alt="Hyeja Logo" height="20">
+            </a>
+          </td>
+        </tr>
+      </tbody>
     </table>
   
 
-      <table class="w-full mb-80px pt-200px" cellpadding="0" cellspacing="0" role="presentation">
-  <tr class="w-full flex flex-row justify-between">
-    <td class="column">
-      <h1 class=" text-heading-all m-0 pb-16px">
-        Thank you for your order,
+      <table class="min-h-200px" cellpadding="0" cellspacing="0" role="presentation">
+    <tbody>
+        <tr>
+            <td class="min-h-200px"></td>
+        </tr>
+    </tbody>
+</table>
+      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+  <tbody>
+    <tr class="w-full flex flex-row justify-between">
+      <td>
+        <h1 class="text-heading-all m-0 pb-16px text-_232323">
+          Thank you for your order,
+          
+            <br>
+            we&#039;re processing it for you now
+          </h1>
+        <p class="text-body-all max-w-252px text-_030303">
+          We’ll send you an email once it&#039;s dispatched containing tracking details.
+        </p>
         
-          <br>
-          we&#039;re processing it for you now
-        </h1>
-      <p class="text-body-all max-w-252px">
-        We’ll send you an email once it&#039;s dispatched containing tracking details.
-      </p>
-      
-    </td>
-  </tr>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
-      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t">
-    <td class="flex flex-row justify-between w-full">
-      
-        <p class="w-full">Order #2012</p>
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-      
-    </td>
-  </tr>
+      <table class="min-h-80px" cellpadding="0" cellspacing="0" role="presentation">
+    <tbody>
+        <tr>
+            <td class="min-h-80px"></td>
+        </tr>
+    </tbody>
 </table>
+      
+  
+    <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+      <tbody>
+        <tr>
+          <td class="h-1px bg-_DBD9D3 w-full"></td>
+        </tr>
+        <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t">
+          <td class="flex flex-row justify-between w-full">
+            <p class="w-full text-middle">Order {{ order_name }}</p>
+            <p class="w-full"></p>
+            <p class="w-full"></p>
+            <p class="w-full"></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
 
       
   
-    <table class="w-full h-full" cellpadding="0" cellspacing="0" role="presentation">  
-      <tr class="w-full flex justify-between border-t">
-        <td class="flex">
-          {% for line in line_items %}
-          {% assign title = line.title | split: '/' %}
-          <img src="{{ line.image  | img_url: '120x120' }}" width="120" alt="">
-          <div class="pl-2 text-body-all flex flex-col justify-between py-8px">
-            <div class="h-full w-full">
-              <p class="pb-2">
-                {{ title[0] }}<br>
-                {{ title[1] }}
-              </p>
-            </div>
-            <p>{{ line.line_price | money_with_currency }}</p>
-          </div>
-        </td>
-        <td class="h--full flex justify-end">
-          {{ line.quantity }}
-        </td>
+    <table class="w-full h-full text-body-all" cellpadding="0" cellspacing="0" role="presentation">
+      <tbody>
+        {% for line in line_items %} {% assign title = line.title | split: '/'
+        %}
+        <tr>
+          <td class="h-1px bg-_DBD9D3 w-full"></td>
+        </tr>
+        <tr class="w-full h-120px max-h-120px">
+          <td>
+            <table class="column-3 w-full max-h-full h-120px" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td class="w-118px">
+                  <img src="{{ line.image  | img_url: '120x120', crop: 'center'  }}" style="width: 120px; height: 120px; vertical-align: top" alt>
+                </td>
+                <td class="w-full py-8px pl-8px h-full">
+                  <table class="h-full" cellpadding="0" cellspacing="0" role="presentation">
+                    <tr>
+                      <td valign="top">
+                        <p class="pb-8px max-w-140px">
+                          {{ title[0] }} {{ title[1] }}
+                          <br>
+                          <span>
+                            95ml / 3.2 fl.oz
+                          </span>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr valign="bottom">
+                      <td>
+                        <p>
+                          {{ line.line_price | money_with_currency }}
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td valign="top">
+                  <p class="pt-8px pr-8px w-80px" align="right">
+                    Qty x {{ line.quantity }}
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
         {% endfor %}
-      </tr>
+      </tbody>
+    </table>
+  
+
+      
+  
+    <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+      <tbody class="text-body-all">
+        <tr>
+          <td class="h-1px bg-_DBD9D3 w-full"></td>
+        </tr>
+        <tr class="column-4 h-32px">
+          <td class="column">
+          </td>
+          <td class="column">
+          </td>
+          <td class="column">
+            <p class="text-middle">Subtotal:</p>
+          </td>
+          <td class="column">
+            <p class="text-middle">{{ subtotal_price | money_with_currency }}</p>
+          </td>
+        </tr>
+        <!-- shipping -->
+        <tr>
+          <td class="h-1px bg-_DBD9D3 w-full"></td>
+        </tr>
+        <tr class="column-4 w-full h-32px">
+          <td class="column">
+          </td>
+          <td class="column">
+          </td>
+          <td class="column">
+            <p class="w-full text-middle">Shipping:</p>
+          </td>
+          <td class="column">
+            <p class="w-full text-middle">{{ shipping_price | money_with_currency }}</p>
+          </td>
+        </tr>
+        <!-- tax -->
+        <tr>
+          <td class="h-1px bg-_DBD9D3 w-full"></td>
+        </tr>
+        <tr class="column-4 w-full h-32px">
+          <td class="column">
+          </td>
+          <td class="column">
+          </td>
+          <td class="column">
+            <p class="w-full text-middle">Tax:</p>
+          </td>
+          <td class="column">
+            <p class="w-full text-middle">{{ tax_price | money_with_currency }}</p>
+          </td>
+        </tr>
+        <!-- total -->
+        <tr>
+          <td class="h-2px bg-_070707 w-full"></td>
+        </tr>
+        <tr class="column-4 w-full h-32px">
+          <td class="column">
+            <p class="w-full text-middle">Total:</p>
+          </td>
+          <td class="column">
+          </td>
+          <td class="column">
+          </td>
+          <td class="column">
+            <p class="w-full text-middle">{{ total_price | money_with_currency }}</p>
+          </td>
+        </tr>
+      </tbody>
     </table>
   
 
       <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t">
-    <td class="flex flex-row justify-between w-full">
-      
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        <p class="w-full">Subtotal:</p>
-        
-          <p class="w-full">990</p>
-        
-    </td>
-  </tr>
+  <tbody class="w-full">
+    <tr class="w-full">
+      <td align="center" class="bg-_070707 w-full h-32px mb-40px cursor-pointer">
+      <a class="no-underline text-body leading-32px w-full" style="color: #ffff !important" href="https://www.yumeibrand.com/?action=ACTIVATE&amp;url=0" target="_blank" rel="noopener noreferrer">
+           View Order
+        </a>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
-      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t">
-    <td class="flex flex-row justify-between w-full">
-      
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        <p class="w-full">Shipping:</p>
-        
-          <p class="w-full">10</p>
-        
-    </td>
-  </tr>
+      <table class="min-h-40px" cellpadding="0" cellspacing="0" role="presentation">
+    <tbody>
+        <tr>
+            <td class="min-h-40px"></td>
+        </tr>
+    </tbody>
 </table>
-
-      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-tb">
-    <td class="flex flex-row justify-between w-full">
-      
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        <p class="w-full">Tax:</p>
-        <p class="w-full">$0.00</p>
-      
-    </td>
-  </tr>
-</table>
-
-      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-  <tr class="w-full h-32px flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t-thick">
-    <td class="flex flex-row justify-between w-full">
-      
-        <p class="w-full">Total:</p>
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        
-          <p class="w-full">$980</p>
-        
-    </td>
-  </tr>
-</table>
-
-      <table cellpadding="0" cellspacing="0" role="presentation">
-  <tr>
-    <div class="bg-black w-full h-32px mb-40px flex justify-center items-center font-primaryfont-normal">
-      <a class="text-_ffff text-center no-underline text-body leading-body tracking-body" href="https://www.yumeibrand.com/?action=ACTIVATE&amp;url=0" target="_blank" rel="noopener noreferrer">
-         View Order
-      </a>
-    </div>
-  </tr>
-</table>
-
       <!-- shopify design -->
 
+  
+    <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+      <tbody>
+        <tr>
+          <td class="h-1px bg-_DBD9D3 w-full"></td>
+        </tr>
+        <tr class="w-full h-32px text-body-all">
+          <td class="w-full mb-16px">
+            <p class="w-full text-middle">Details</p>
+            <p class="w-full"></p>
+            <p class="w-full"></p>
+            <p class="w-full"></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="h-1px bg-_DBD9D3 w-full"></td>
+        </tr>
+        <tr class="column-2 text-body-all text-_070707">
+          <td class="column pt-16px">
+            <p class="pb-8px m-0">Shipping Address:</p>
+            <table cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td>
+                  {% if shipping_address.address1 %}
+                  <p>{{ shipping_address.name }}</p>
+                  <p>
+                    {{ shipping_address.address1 }} {% endif %} {% if
+                    shipping_address.address2 %} {{ shipping_address.address2
+                    }} {% endif %}
+                  </p>
+                  <p>
+                    {% if shipping_address.city %} {{ shipping_address.city }},
+                    {% endif %}
+                  </p>
+                  <p>
+                    {% if shipping_address.province %} {{
+                    shipping_address.province }} {% endif %} {{
+                    shipping_address.zip }} {{ shipping_address.country }}
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <h5 class="pb-8px pt-16px">Delivery Address:</h5>
+            <table cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td>
+                  <p>{{ billing_address.name }}</p>
+                  <p>
+                    {% if billing_address.address1 %} {{
+                    billing_address.address1 }} {% endif %} {% if
+                    billing_address.address2 %} {{ billing_address.address2 }}
+                    {% endif %}
+                  </p>
+                  <p>
+                    {% if billing_address.city %} {{ shipping_address.city }},
+                    {% endif %}
+                  </p>
+                  <p>
+                    {% if billing_address.province %} {{
+                    billing_address.province }} {% endif %} {{
+                    billing_address.zip }} {{ billing_address.country }}
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="column pt-16px">
+            <h5 class="pb-8px">Payment Method:</h5>
+            <table cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td>
+                  {% if gateway %}
+                  <p>{{ gateway | capitalize }}</p>
+                  {% endif %} {% if shipping_method.title %}
+                  <p class="pt-16px pb-8px">Delivery Method:</p>
+                  <p>{{ shipping_method.title }}</p>
+                  {% endif %}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+
+      <table class="min-h-120px" cellpadding="0" cellspacing="0" role="presentation">
+    <tbody>
+        <tr>
+            <td class="min-h-120px"></td>
+        </tr>
+    </tbody>
+</table>
+      
     
-        <table class="w-full mb-120px mt-16px " cellpadding="0" cellspacing="0" role="presentation">
-        <tr class="w-full flex flex-row justify-between font-primaryfont-normal text-body tracking-body leading-body text-_070707">
-            <td class="column w-full">
-                <p class="pb-2 m-0">Shipping Address: </p>
-                <div>
-                    {% if shipping_address.address1 %}
-                    <br>
-                    <p>
-                        {{ shipping_address.name }}
-                    </p>
-                    <p>
-                        {{ shipping_address.address1 }}
-                        {% endif %}
-                        {% if shipping_address.address2 %}
-                        <br>{{ shipping_address.address2 }} 
-                        {% endif %}
-                    </p>
-                    <p>
-                        {% if shipping_address.city %}
-                        <br>
-                        {{ shipping_address.city }},
-                        {% endif %}
-                    </p>
-                    <p>
-                        {% if shipping_address.province %}
-                        {{ shipping_address.province }}
-                        {% endif %}
-                        {{ shipping_address.zip }}
-                        <br>
-                        {{ shipping_address.country }}
-                    </p>
-                </div>
-                    <p class="pb-2 pt-4">Delivery Address: </p> 
-                    <div>
-                        <br>
-                        <p>
-                            {{ billing_address.name }}
-                        </p>
-                        <p>
-                            {% if billing_address.address1 %}
-                            <br>
-                            {{ billing_address.address1 }}
-                            {% endif %}
-                            {% if billing_address.address2 %}
-                            <br>
-                            {{ billing_address.address2 }}
-                            {% endif %}
-                        </p>
-                        <p>
-                            {% if billing_address.city %}
-                            <br>
-                            {{ shipping_address.city }},
-                            {% endif %}
-                        </p>
-                        <p>
-                        {% if billing_address.province %}
-                        {{ billing_address.province }}
-                        {% endif %}
-                        {{ billing_address.zip }} {{ billing_address.country }}
-                        </p>
-                    </div>
-                </td>
-                <td class="column w-full flex flex-col gap-2">
-                    {% if gateway %}
-                    <p>Payment Method: </p>
-                    <p>{{ gateway }}</p><br>
-                    {% endif %}
-                    {% if shipping_method.title %}
-                    <p class="pt-3">Delivery Method: </p>
-                    <p>{{ shipping_method.title }}</p><br>
-                    {% endif %}
-                </td>
-            </tr>
+        <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
+            <tbody>
+                <tr class="column-2 w-full">
+                    <td class="column text-caption-all">
+                        <h5 class="pb-8px">Inquiries: </h5>
+                        <h5>Customer service: </h5>
+                        <a target="_blank" class="text-link" href="https://yumeibrand.com/contact">info@hyejaskincare.com</a>
+                    
+                        <p class="pb-16px mt-36px">We Combined pristine quality Vegan EWG Ingredients with State-of-the-art Korean Technology
+                            to formulate the most Effective Skincare.</p>
+                        <p class="text-_8C8C8C">© 2022 ASEZ CORP. All rights reserved.</p>
+                    </td>
+                    <td class="column text-caption-all">
+                        <h5 class="pb-8px">Follow Us: </h5>
+                        <a target="_blank" class="text-link" href="https://www.facebook.com/yumeibrand/">Facebook</a><br>
+                        <a target="_blank" class="text-link" href="https://www.instagram.com/yumeibrand/">Instagram</a><br>
+                        <a target="_blank" class="text-link" href="https://www.instagram.com/yumeibrand/">Tiktok</a><br>
+                    </td>    
+                </tr>
+            </tbody>
         </table>
     
 
-      <table cellpadding="0" cellspacing="0" role="presentation">
-    <div class="mt-120px"></div>
-</table>
-      <table class="w-full" cellpadding="0" cellspacing="0" role="presentation">
-    <tr class="w-full flex flex-row justify-between text-caption leading-caption gap-1 tracking-body">
-        <td class="column w-full">
-            <p>Inquiries: </p>
-            <p>Customer service: </p>
-            <a target="_blank" href="https://yumeibrand.com/contact" class="m-0">info@hyejaskincare.com</a><br>
-            
-            <p class="pb-4 mt-8">We Combined pristine quality Vegan EWG Ingredients with State-of-the-art Korean Technology
-                 to formulate the most Effective Skincare.</p>
-            <p class="text-_8C8C8C">© 2022 ASEZ CORP. All rights reserved.</p><br>
-        </td>
-        <td class="column w-full">
-            <p class="pb-2">Follow Us: </p>
-            <a target="_blank" href="https://www.facebook.com/yumeibrand/">Facebook</a><br>
-            <a target="_blank" href="https://www.instagram.com/yumeibrand/">Instagram</a><br>
-            <a target="_blank" href="https://www.instagram.com/yumeibrand/">Tiktok</a><br>
-        </td>
-        
-</tr>
-</table>
-
-      <!-- <component src="src/components/addresses.html"></component> -->
     
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
-
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</center>
 
   
   </div>

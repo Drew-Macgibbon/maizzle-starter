@@ -1,0 +1,41 @@
+<if condition="page.env === 'shopify'">
+  <raw>
+    <table class="w-full">
+      <tbody class="text-body-all">
+        <!-- refund -->
+        <tr>
+          <td class="h-[2px] bg-[#070707] w-full"></td>
+        </tr>
+        <tr
+          class="column-4 w-full h-[32px]"
+          >
+          <td class="column" >
+            <p class="w-full text-middle">Refund:</p>
+          </td>
+          <td class="column" >
+          </td>
+          <td class="column" >
+          </td>
+          <td class="column" >
+            <p class="w-full text-middle">@{{ amount | money_with_currency }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </raw>
+</if>
+<else>
+  <table class="w-full text-body-all">
+    <tbody>
+      <tr
+      class="w-full ">
+        <td class="flex w-full h-[32px]">
+          <p class="w-full text-middle">Refund:</p>
+          <p class="w-full"></p>
+          <p class="w-full"></p>
+          <p class="w-full text-middle">${{ amount | money_with_currency }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</else>

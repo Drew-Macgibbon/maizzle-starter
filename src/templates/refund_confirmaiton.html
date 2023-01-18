@@ -9,73 +9,34 @@ subtitle: We have processed your refund per your request. Please allow us 3–5 
     <component src="src/components/wrapper.html">
       <!-- <component src="src/components/abandoned_cart.html"></component> -->
       <!-- <component src="src/components/head.html"> -->
-      <component src="src/components/header.html"></component>
-      <component src="src/components/title.html">
-        <p class="text-caption-all pb-[8px]">
-          If this was an error, please contact:
-        </p>
-        <p class="text-caption-all pb-[32px]">
-          Customer service <br />
-          <a href="info@hyejaskincare.com">info@hyejaskincare.com</a>
-        </p>
-      </component>
-      <component src="src/components/row.html">
-        <p class="w-full">Cancelled Item(s)</p>
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-      </component>
-      <component src="src/components/row_bt.html">
-        <p class="w-full">Order #2012</p>
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-      </component>
+        <component src="src/components/header.html"></component>
+        <component src="src/components/spacer_200.html"></component>
+        <component src="src/components/title.html">
+          <span class="text-caption-all pb-[8px]">
+            If this was an error, please contact:
+          </span>
+          <span class="text-caption-all pb-[32px]">
+            Customer service <br />
+            <a href="info@hyejaskincare.com">info@hyejaskincare.com</a>
+          </span>
+        </component>
+        <component src="src/components/spacer_80.html"></component>
+        <component src="src/components/row.html">
+          <span class="w-full">Cancelled Item(s)</span>
+          <span class="w-full"></span>
+          <span class="w-full"></span>
+          <span class="w-full"></span>
+        </component>
+      <component src="src/components/border-t.html"></component>
+      <component src="src/components/order_id.html"></component>
       <component src="src/components/items.html"></component>
-      <component src="src/components/row_bt.html">
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        <p class="w-full">Subtotal:</p>
-        <if condition="page.env === 'shopify'">
-          <p class="w-full">@{{ subtotal_price | money_with_currency }}</p>
-        </if>
-        <else>
-          <p class="w-full">${{ subtotal_price + money_with_currency }}</p>
-        </else>
-      </component>
-      <component src="src/components/row_bt.html">
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        <p class="w-full">Shipping:</p>
-        <if condition="page.env === 'shopify'">
-          <p class="w-full">@{{ shipping_price | money_with_currency }}</p>
-        </if>
-        <else>
-          <p class="w-full">${{ shipping_price + money_with_currency }}</p>
-        </else>
-      </component>
-      <component src="src/components/row_bordered.html">
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        <p class="w-full">Tax:</p>
-        <p class="w-full">$0.00</p>
-      </component>
-      <component src="src/components/row_bt_thick.html">
-        <p class="w-full">Total:</p>
-        <p class="w-full"></p>
-        <p class="w-full"></p>
-        <if condition="page.env === 'shopify'">
-          <p class="w-full">$@{{ total_price | money_with_currency }}</p>
-        </if>
-        <else>
-          <p class="w-full">${{ total_price + money_with_currency }}</p>
-        </else>
-      </component>
+      <component src="src/components/totals.html"></component>
+      <component src="src/components/refund.html"></component>
       <component src="src/components/button.html"> View Order</component>
+      <component src="src/components/spacer_40.html"></component>
       <component src="src/components/details.html"></component>
       <component src="src/components/spacer_120.html"></component>
       <component src="src/components/footer.html"></component>
-      <!-- <component src="src/components/addresses.html"></component> -->
     </component>
   </block>
 </extends>

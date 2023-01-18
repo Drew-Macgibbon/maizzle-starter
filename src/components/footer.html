@@ -1,22 +1,52 @@
-<table
-    class="w-full"
->
-    <tr class="w-full flex flex-row justify-between text-caption leading-caption gap-1 tracking-body">
-        <td class="column w-full">
-            <p>Inquiries: </p>
-            <p>Customer service: </p>
-            <a target="_blank" href="{{ page.company.links.contact }}" class="m-0">info@hyejaskincare.com</a></br>
-            
-            <p class="pb-4 mt-8">We Combined pristine quality Vegan EWG Ingredients with State-of-the-art Korean Technology
-                 to formulate the most Effective Skincare.</p>
-            <p class="text-[#8C8C8C]">© 2022 ASEZ CORP. All rights reserved.</p></br>
-        </td>
-        <td class="column w-full">
-            <p class="pb-2">Follow Us: </p>
-            <a target="_blank"  href="{{ page.company.socials.facebook }}">Facebook</a></br>
-            <a target="_blank"  href="{{ page.company.socials.instagram }}">Instagram</a></br>
-            <a target="_blank" href="{{ page.company.socials.instagram }}">Tiktok</a></br>
-        </td>
-        
-</tr>
-</table>
+<if condition="page.env === 'shopify'">
+    <raw>
+        <table
+            class="w-full"
+        >
+            <tbody>
+                <tr class="column-2 w-full">
+                    <td class="column text-caption-all">
+                        <h5 class="pb-[8px]">Inquiries: </h5>
+                        <h5>Customer service: </h5>
+                        <a target="_blank" class="text-link" href="{{ page.company.links.contact }}" class="m-0">info@hyejaskincare.com</a>
+                    
+                        <p class="pb-[16px] mt-[36px]">We Combined pristine quality Vegan EWG Ingredients with State-of-the-art Korean Technology
+                            to formulate the most Effective Skincare.</p>
+                        <p class="text-[#8C8C8C]">© 2022 ASEZ CORP. All rights reserved.</p>
+                    </td>
+                    <td class="column text-caption-all">
+                        <h5 class="pb-[8px]">Follow Us: </h5>
+                        <a target="_blank" class="text-link" href="{{ page.company.socials.facebook }}">Facebook</a></br>
+                        <a target="_blank" class="text-link" href="{{ page.company.socials.instagram }}">Instagram</a></br>
+                        <a target="_blank" class="text-link" href="{{ page.company.socials.instagram }}">Tiktok</a></br>
+                    </td>    
+                </tr>
+            </tbody>
+        </table>
+    </raw>
+</if>
+<else>
+    <table
+        class="w-full"
+    >
+        <tbody>
+            <tr class="w-full flex flex-row justify-between gap-1">
+                <td class="column w-full text-caption leading-caption tracking-body">
+                    <h6 class="pb-[8px]">Inquiries: </h6>
+                    <h6>Customer service: </h6>
+                    <a target="_blank" href="{{ page.company.links.contact }}">info@hyejaskincare.com</a>
+                    
+                    <p class="pb-[16px] pt-[36px]">We Combined pristine quality Vegan EWG Ingredients with State-of-the-art Korean Technology
+                        to formulate the most Effective Skincare.</p>
+                    <p class="text-[#8C8C8C]">© 2022 ASEZ CORP. All rights reserved.</p>
+                </td>
+                <td class="column w-full text-caption leading-caption tracking-body">
+                    <h6 class="pb-[8px]">Follow Us: </h6>
+                    <a target="_blank"  href="{{ page.company.socials.facebook }}">Facebook</a></br>
+                    <a target="_blank"  href="{{ page.company.socials.instagram }}">Instagram</a></br>
+                    <a target="_blank" href="{{ page.company.socials.instagram }}">Tiktok</a></br>
+                </td>    
+            </tr>
+        </tbody>
+    </table>
+</else>

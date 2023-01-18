@@ -54,7 +54,9 @@ This can likely be automated in the future.
 - [ ] refactor tailwind reusable components, set utilities
 - [ ] create tailwind configs for each project
 - [ ] convert HTML to Liquid progromatically
-- [ ] validate Liquid code using ``liquidjs`` (maybe)
+- [ ] validate Liquid code and allow local rendering using ``liquidjs``
+- [ ] add email sending to a free validation service. could use ``nodemailer`` or ``mailgun``
+
 
 ### FYI:
 
@@ -68,6 +70,9 @@ This can likely be automated in the future.
 If you've never coded emails before, [read this](https://explore.reallygoodemails.com/new-to-email-coding-heres-where-to-start-2494422f0bd4)
 
 ### Email Checking
+
+- review liquid code: https://help.shopify.com/en/manual/orders/notifications/email-variables?shpxid=a2ce9ccf-CCAF-4D7A-81E9-9CDF8330F431
+- check your templates
 
 If you're unsure about HTML or CSS validity you can check [here](https://www.caniemail.com/) 
 

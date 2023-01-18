@@ -1,19 +1,19 @@
-<table
-  class="w-full mb-[80px] pt-[200px]"
->
-  <tr class="w-full flex flex-row justify-between">
-    <td class="column">
-      <h1 class=" text-heading-all m-0 pb-[16px]">
-        {{ page.title_1 }}
-        <if condition="page.title_2">
-          <br />
-          {{ page.title_2 }}
-        </if>
-      </h1>
-      <p class="text-body-all max-w-[252px]">
-        {{ page.subtitle }}
-      </p>
-      <content></content>
-    </td>
-  </tr>
+<table class="w-full">
+  <tbody>
+    <tr class="w-full flex flex-row justify-between">
+      <td>
+        <h1 class="text-heading-all m-0 pb-[16px] text-[#232323]">
+          {{ page.title_1 }}
+          <if condition="page.title_2">
+            <br />
+            {{ page.title_2 }}
+          </if>
+        </h1>
+        <p class="text-body-all max-w-[252px] text-[#030303]">
+          {{ page.subtitle }}
+        </p>
+        <content></content>
+      </td>
+    </tr>
+  </tbody>
 </table>

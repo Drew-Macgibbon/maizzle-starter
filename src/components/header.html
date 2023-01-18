@@ -1,51 +1,51 @@
 <if condition="page.env === 'shopify'">
   <raw>
     <table class="w-full">
+      <tbody>
+        <tr>
+          <td class="col" width="50%" align="left">
+            <p class="p-0 m-0 text-body-all">
+              {% if billing_address.name %} Hi, @{{ billing_address.name }} {%
+              else %} Hi, {% endif %}
+            </p>
+          </td>
+          <td class="col" width="50%" align="right">
+            <a href="@{{shop.url}}">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0669/3142/5601/files/logo-black.png?v=1673518490"
+                alt="Hyeja Logo"
+                height="20"
+              />
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </raw>
+</if>
+<else>
+  <table class="w-full">
+    <tbody>
       <tr class="w-full flex justify-between">
-        <td class="column w-full">  
-          <p class="bg-red-100 p-0 m-0">
-            {% billing_address.name %} {% if item_count == 1 %} 
-            Hi, @{{ billing_address.name }}
-            {% else %}
-            Hi, @{{ billing_address.name }}
-            {% endif %} {% else %} Hi, {% endif %}
+        <td class="column w-full">
+          <p class="p-0 m-0 text-body font-primary">
+            <if condition="billing_address.name">
+              Hi, {{ billing_address.name }}
+            </if>
+            <else> Hi, </else>
           </p>
         </td>
         <td class="column w-full flex justify-end p-0 m-0">
           <a href="">
             <img
-            src="./images/logo.png"
-            alt="Maizzle"
-            height="20"
-            class="max-w-full"
+              src="./images/logo.png"
+              alt="Hyeja Logo"
+              height="20"
+              class="max-w-full"
             />
           </a>
         </td>
       </tr>
-    </table>
-  </raw>
-</if>
-<else>
-    <table class="w-full">
-      <tr class="w-full flex justify-between">
-        <td class="column w-full">
-            <p class="p-0 m-0 text-body font-primary">
-              <if condition="billing_address.name">
-                Hi, {{ billing_address.name }}
-              </if>
-              <else> Hi, </else>
-            </p>
-        </td>
-      <td class="column w-full flex justify-end p-0 m-0">
-        <a href="">
-          <img
-          src="./images/logo.png"
-          alt="Maizzle"
-            height="20"
-            class="max-w-full"
-            />
-          </a>
-        </td>
-      </tr>
-    </table>
+    </tbody>
+  </table>
 </else>

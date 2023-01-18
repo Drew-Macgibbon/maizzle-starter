@@ -17,19 +17,55 @@
 @tailwind base;
 
 @layer base {
-  html {
-    font-weight: 400;
-    font-family: "Georgia", serif;
+  a:link {
+    color: #8C8C8C !important;
+    text-decoration: underline;
   }
   
-  a {
-    color: #8C8C8C;
+  h5 {
+    margin: 0;
+    padding: 0;
+    @apply text-body leading-body tracking-body font-normal font-primary;
+  }
+  h6 {
+    margin: 0;
+    padding: 0;
+    @apply text-caption leading-caption tracking-body font-normal font-primary;
   }
   
   p {
     margin: 0;
+    color: #070707;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Georgia.woff2") format("woff2"), url("/fonts/Georgia.woff") format("woff");
   }
+  img {
+    border: 0;
+  }
+  td {
+    padding: 0;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    cellpadding: 0;
+    border: 0;
+    cellspacing: 0;
+  }
+  body {
+    margin: 0;
+  }
+}
 
+@font-face {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Georgia.woff2") format("woff2"), url("/fonts/Georgia.woff") format("woff");
 }
 
 :root {
@@ -39,6 +75,9 @@
 .text-body-all {
   @apply text-body leading-body tracking-body font-normal font-primary;
 }
+.text-middle {
+  @apply leading-[32px];
+}
 
 .text-caption-all {
   @apply text-caption leading-body tracking-body font-normal font-primary;
@@ -47,4 +86,6 @@
 .text-heading-all {
   @apply text-heading leading-heading tracking-heading font-normal font-primary;
 }
+
+
 

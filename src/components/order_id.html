@@ -1,0 +1,37 @@
+<if condition="page.env === 'shopify'">
+  <raw>
+    <table class="w-full">
+      <tbody>
+        <tr>
+          <td class="h-[1px] bg-[#DBD9D3] w-full"></td>
+        </tr>
+        <tr
+          class="w-full h-[32px] flex justify-start items-center font-primaryfont-normal text-body tracking-body leading-body border-t"
+        >
+          <td class="flex flex-row justify-between w-full">
+            <p class="w-full text-middle">Order @{{ order_name }}</p>
+            <p class="w-full"></p>
+            <p class="w-full"></p>
+            <p class="w-full"></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </raw>
+</if>
+<else>
+  <table class="w-full">
+    <tbody>
+      <tr
+        class="w-full h-[32px] flex justify-start items-center font-primary font-normal text-body-all border-t"
+      >
+        <td class="flex flex-row w-full">
+          <span class="w-full text-middle">Order #9001</span>
+          <span class="w-full"></span>
+          <span class="w-full"></span>
+          <span class="w-full"></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</else>

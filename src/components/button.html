@@ -1,16 +1,20 @@
-<table>
-  <tr>
-    <div
-      class="bg-black w-full h-[32px] mb-[40px] flex justify-center items-center font-primaryfont-normal"
-    >
+<table class="w-full">
+  <tbody class="w-full">
+    <tr class="w-full">
+      <td 
+      align="center"
+      class="bg-[#070707] w-full h-[32px] mb-[40px] cursor-pointer"
+      >
       <a
-        class="text-[#ffff] text-center no-underline text-body leading-body tracking-body"
+        class="no-underline text-body leading-[32px] w-full"
+        style="color: #ffff !important;"
         href="https://www.yumeibrand.com/?action=ACTIVATE&amp;url={{ customer.account_activation_url | escape }}"
         target="_blank"
         rel="noopener noreferrer"
-      >
-        <content></content>
-      </a>
-    </div>
-  </tr>
+        >
+          <content></content>
+        </a>
+      </td>
+    </tr>
+  </tbody>
 </table>

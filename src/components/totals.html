@@ -1,21 +1,126 @@
-<table
-  class="section w-full h-[250px] px-[16px]"
-  cellpadding="0"
-  cellspacing="0"
-  role="presentation"
->
-  <tr class="w-full border-b-[2px] border-t-[2px] border-black border-solid py-2" >
-    <td class="column">
-      Order #2012
-    </td>
-    <td class="column">
-      Order #2012
-    </td>
-    <td class="column">
-      Order #2012
-    </td>
-    <td class="column">
-      Order #2012
-    </td>
-  </tr>
-</table>
+<if condition="page.env === 'shopify'">
+  <raw>
+    <table class="w-full">
+      <tbody class="text-body-all">
+        <tr>
+          <td class="h-[1px] bg-[#DBD9D3] w-full"></td>
+        </tr>
+        <tr
+          class="column-4 h-[32px]"
+          >
+          <td class="column" >
+          </td>
+          <td class="column" >
+          </td>
+          <td class="column" >
+            <p class="text-middle">Subtotal:</p>
+          </td>
+          <td class="column" >
+            <p class="text-middle">@{{ subtotal_price | money_with_currency }}</p>
+          </td>
+        </tr>
+        <!-- shipping -->
+        <tr>
+          <td class="h-[1px] bg-[#DBD9D3] w-full"></td>
+        </tr>
+        <tr
+          class="column-4 w-full h-[32px]"
+          >
+          <td class="column" >
+          </td>
+          <td class="column" >
+          </td>
+          <td class="column" >
+            <p class="w-full text-middle">Shipping:</p>
+          </td>
+          <td class="column" >
+            <p class="w-full text-middle">@{{ shipping_price | money_with_currency }}</p>
+          </td>
+        </tr>
+        <!-- tax -->
+        <tr>
+          <td class="h-[1px] bg-[#DBD9D3] w-full"></td>
+        </tr>
+        <tr
+          class="column-4 w-full h-[32px]"
+          >
+          <td class="column" >
+          </td>
+          <td class="column" >
+          </td>
+          <td class="column" >
+            <p class="w-full text-middle">Tax:</p>
+          </td>
+          <td class="column" >
+            <p class="w-full text-middle">@{{ tax_price | money_with_currency }}</p>
+          </td>
+        </tr>
+        <!-- total -->
+        <tr>
+          <td class="h-[2px] bg-[#070707] w-full"></td>
+        </tr>
+        <tr
+          class="column-4 w-full h-[32px]"
+          >
+          <td class="column" >
+            <p class="w-full text-middle">Total:</p>
+          </td>
+          <td class="column" >
+          </td>
+          <td class="column" >
+          </td>
+          <td class="column" >
+            <p class="w-full text-middle">@{{ total_price | money_with_currency }}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </raw>
+</if>
+<else>
+  <table class="w-full text-body-all">
+    <tbody>
+      <tr
+        class="w-full h-[32px] flex justify-start
+        font-primary font-normal"
+        >
+        <td class="flex flex-row w-full ">
+          <p class="w-full"></p>
+          <p class="w-full"></p>
+          <p class="w-full text-middle">Subtotal:</p>
+          <p class="w-full text-middle">${{ subtotal_price + money_with_currency }}</p>
+        </td>
+      </tr>
+      <tr
+      class="w-full h-[32px] flex justify-start 
+      font-primary font-normal text-body tracking-body leading-body"
+      >
+      <td class="flex flex-row w-full h-full ">
+          <p class="w-full"></p>
+          <p class="w-full"></p>
+          <p class="w-full text-middle">Shipping:</p>
+          <p class="w-full text-middle">${{ shipping_price + money_with_currency }}</p>
+        </td>
+      </tr>
+      <tr
+      class="w-full h-[32px]"
+      >
+        <td class="flex flex-row w-full h-full ">
+          <p class="w-full"></p>
+          <p class="w-full"></p>
+          <p class="w-full text-middle">Tax:</p>
+          <p class="w-full text-middle">${{ tax_price + money_with_currency }}</p>
+        </td>
+      </tr>
+      <tr
+      class="w-full ">
+        <td class="flex w-full h-[32px]">
+          <p class="w-full text-middle">Total:</p>
+          <p class="w-full"></p>
+          <p class="w-full"></p>
+          <p class="w-full text-middle">${{ total_price + money_with_currency }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</else>
